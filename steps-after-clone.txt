@@ -1,0 +1,34 @@
+STEPS AFTER CLONING LARAVEL PROJECT
+
+*Terminal
+
+1. INSTALL COMPOSER
+	composer install
+
+2. UPDATE DB CONNECTION
+	go to .env file and update db name, user and pwrd
+
+3. UPDATE DB CONNECTION IN
+	go to /config/database.php and update db name, user and pwrd
+
+4.  Generate an app encryption key
+	php artisan key:generate
+
+5.  Migrate the database
+	php artisan migrate
+
+
+
+source : https://devmarketer.io/learn/setup-laravel-project-cloned-github-com/
+
+* troubleshoot enctryption key error : https://devmarketer.io/learn/setup-laravel-project-cloned-github-com/
+
+	The correct way of resolving this is as follows
+		php artisan key:generate 
+		php artisan config:cache
+
+	Check the .env file and confirm that the value of APP_KEY is equal to the value you noted during key:generate
+
+
+
+
