@@ -24,11 +24,11 @@
     <div class = "head-section">
         <img id = "main-logo" src="{{ URL::to('/images/main_logo1.png') }}">
         <div id="head-tabs">
-            <a href="inicio">Inicio &nbsp/</a>
-            <a href="nosotros">Nosotros &nbsp/</a>
-            <a href="equipos">Equipos &nbsp/</a>
+            <a href="/inicio">Inicio &nbsp/</a>
+            <a href="/nosotros">Nosotros &nbsp/</a>
+            <a href="/equipos">Equipos &nbsp/</a>
             <a href="http://axb1186.uta.cloud/">Blog &nbsp/</a>
-            <a href="contacto">Contacto &nbsp/</a>
+            <a href="/contacto">Contacto &nbsp/</a>
             <a href="/">Inicio De Session</a>
         </div>
     </div>
@@ -44,11 +44,11 @@
     <!--Hamburger Menu for Mobile Navigation-->
     <nav id="slide-nav">
         <div id="mySidenav" class="sidenav">
-            <a href="inicio">Inicio</a>
-            <a href="nosotros">Nosotros</a>
-            <a href="equipos"></a>
+            <a href="/inicio">Inicio</a>
+            <a href="/nosotros">Nosotros</a>
+            <a href="/equipos"></a>
             <a href="http://axb1186.uta.cloud/">Blog</a>
-            <a href="contacto">Contacto</a>
+            <a href="/contacto">Contacto</a>
             <a href="/">Inicio De Session</a>
         </div>
     </nav>

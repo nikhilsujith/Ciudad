@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\ContactoModel;
+use App\InicioModel;
 use Illuminate\Http\Request;
 
-
-class contactoController extends Controller
+class inicioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,8 @@ class contactoController extends Controller
      */
     public function index()
     {
-        $title = 'contacto';
-        $contacto = ContactoModel::all();
-        return view('user_view.contacto',compact('contacto','title')); //pass varibles to the view
+        return view('user_view.inicio'); //return view inicio
+
     }
 
     /**
@@ -27,7 +25,7 @@ class contactoController extends Controller
      */
     public function create()
     {
-//
+        //
     }
 
     /**
@@ -39,22 +37,23 @@ class contactoController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'cPhone' => 'required',
-            'cName' => 'required',
-            'cTitle' => 'required',
-            'cDesc' => 'required',
+            'uName' => 'required',
+            'uPassword' => 'required',
+            'uEmail' => 'required',
+            'uLocation' => 'required',
         ]);
 
-        $contacto = new ContactoModel(); //object of ContactoModel class
+        $inicio = new InicioModel(); //object of InicioModel class
 
-        $contacto->cPhone = $request->input('cPhone');
-        $contacto->cName = $request->input('cName');
-        $contacto->cTitle = $request->input('cTitle');
-        $contacto->cDesc = $request->input('cDesc');
+        $inicio->uName = $request->input('uName');
+        $inicio->uPassword = $request->input('uPassword');
+        $inicio->uEmail = $request->input('uEmail');
+        $inicio->uLocation = $request->input('uLocation');
 
-        $contacto->save();
+        $inicio->save(); //saves inicio inputs
 
-        return redirect('/contacto')->with('success','Request Registered');
+        return redirect('/inicio')->with('success','User Registered');
+
     }
 
     /**

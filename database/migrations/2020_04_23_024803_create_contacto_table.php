@@ -19,7 +19,6 @@ class CreateContactoTable extends Migration
             $table->string('cName');
             $table->string('cTitle');
             $table->string('cDesc');
-
         });
     }
 

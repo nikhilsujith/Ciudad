@@ -1,4 +1,4 @@
-@include('layouts.user_view.user_header')
+@include('user_view.header')
 <head>
     <title></title>
 </head>
@@ -109,27 +109,5 @@
 </div>
 </body>
 
-@include('layouts.user_view.user_footer')
-
-{{--<script>
-    function openNav() {
-        var e = document.getElementById("mySidenav"); //store mySidenav in e
-        var f = document.getElementById("content-wrap"); //store main in f
-        if (e.style.width=='250px'&& f.style.marginLeft=='250px') //check if both are expanded
-        { //if expanded, revert to 0
-            e.style.width='0px';
-            f.style.marginLeft='0px';
-        }
-        else //if not expanded, expand to 250 px
-        {
-            e.style.width='250px';
-            f.style.marginLeft='250px';
-        }
-    }
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("content-wrap").style.marginLeft = "0";
-
-    }
-</script>--}}
+@include('user_view.footer')
 </html>

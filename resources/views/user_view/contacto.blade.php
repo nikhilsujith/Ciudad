@@ -41,7 +41,6 @@
                     </div>
                 @endif
 
-
                 <div>
                     <form id = "contact-us-form" name = "contact-us-form" action="/ContactoAdd" method = "POST">
                         {{csrf_field()}}
