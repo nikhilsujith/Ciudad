@@ -1,4 +1,4 @@
-@include('user_view.header')
+@include('user.header')
 
 @section('equipos-body')
     <body>
@@ -60,7 +60,7 @@
     </div>
     </div>
     </body>
-@include('user_view.footer')
+@include('user.footer')
 <script>
     function openNav() {
         var e = document.getElementById("mySidenav"); //store mySidenav in e

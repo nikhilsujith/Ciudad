@@ -19,24 +19,44 @@ Route::get('/welcome', function () {
 
 Route::get('/', function () {
     $title = "Inicio De Session";
-    return view('user_view.home',compact('title'));
+    return view('user.home',compact('title'));
 });
 
 Route::get('/equipos', function () {
     $title = "Equipos";
-    return view('user_view.equipos',compact('title'));
+    return view('user.equipos',compact('title'));
 });
 
 Route::get('/nosotros', function () {
     $title = "nosotros";
-    return view('user_view.nosotros',compact('title'));
+    return view('user.nosotros',compact('title'));
 });
 
 //inicio page routes
-Route::get('inicio','inicioController@index');
-Route::post('/RegisterUser','inicioController@store');
+Route::get('inicio','loginController@index');
+Route::post('/RegisterUser','loginController@store');
 
 //contacto page routes
 Route::get('contacto','contactoController@index');//direct to controller to get page
 Route::post('/ContactoAdd','contactoController@store'); //to insert into db
 
+
+/*User Login Routes*/
+Route::get('/login','LoginController@showLogin');
+Route::post('/doLogin','LoginController@doLogin');
+Route::get('/successLogin','LoginController@successLogin');
+Route::get('/logout','LoginController@logout');
+//Admin Routes ------------------------------------------------------------------------------------------------|
+
+Route::prefix('/admin')->namespace('Admin')->group(function(){
+    Route::get('/','AdminLoginController@index');
+    Route::get('/teams','TeamsAdminController@index');
+    Route::get('/events','EventsAdminController@index');
+    Route::get('/participants','ParticipantsAdminController@index');
+    Route::get('/issues','IssuesAdminController@index');
+    Route::post('AdminAdd','AdminLoginController@store');
+    /*Admin Login Routes*/
+    Route::post('/doAdminLogin','AdminLoginController@doAdminLogin');
+    Route::get('/successAdminLogin','AdminLoginController@successAdminLogin');
+    Route::get('/logout','LoginController@logout');
+});

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class CreateAdminsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('admins', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('uName');
-            $table->string('uPassword');
-            $table->string('uEmail')->unique();
-            $table->string('uLocation');
-            $table->rememberToken(); //laravel default stuff
+            $table->string('aName');
+            $table->string('aPassword');
+            $table->string('aEmail')->unique();
+            $table->rememberToken(); //laravel deafult stuff
             $table->timestamps(); //laravel default stuff
         });
     }
@@ -31,6 +30,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('admins');
     }
 }

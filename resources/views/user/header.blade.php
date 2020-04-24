@@ -30,6 +30,20 @@
             <a href="http://axb1186.uta.cloud/">Blog &nbsp/</a>
             <a href="/contacto">Contacto &nbsp/</a>
             <a href="/">Inicio De Session</a>
+
+{{--            <strong>USER DASHBOARD</strong>
+            @if (isset(Auth::user()->uName))
+                <div class = "alert alert-success success-block">
+                    <strong>WELCOME: {{Auth::user()->uName}}</strong>
+                    <a href = "{{url('/logout')}}">Logout</a>
+                </div>
+            @else
+                <script>
+                    window.location="/login";
+                </script>
+            @endif--}}
+
+
         </div>
     </div>
     <div id = "content-wrap">
@@ -37,7 +51,9 @@
             <div class="column" id="menu-icon">
                 <img src="https://img.icons8.com/nolan/24/menu.png"1 onClick=openNav()>
             </div>
-            <h2  class = "fonts_style, white"><span id="myText">{{isset($title) ? $title : 'title'}}</span></h2> <!--Span with #id gets title of the page-->
+            <h2  class = "fonts_style, white">
+                <span id="myText">{{isset($title) ? $title : 'title'}}</span>
+            </h2> <!--Span with #id gets title of the page-->
         </div>
     </div>
 

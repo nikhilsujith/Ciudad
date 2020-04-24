@@ -194,7 +194,7 @@
                         <button id="inicio-events-div-register-button">Registrar Ahora</button>
                      </form>
                 </div>
-        </div>
+            </div>
     </div>
 
     <div id="footer_register">

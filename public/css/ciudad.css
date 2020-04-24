@@ -1171,3 +1171,12 @@ body {
   width: auto;
 }
 /*XXXXXXXXXXX----Login Validate END---XXXXXXXXX*/
+
+/*LARAVEL*/
+#successDiv{
+    position: relative;
+    text-transform: uppercase;
+}
+#logoutButton{
+    float: right;
+}

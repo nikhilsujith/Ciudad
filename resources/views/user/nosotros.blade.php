@@ -1,4 +1,4 @@
-@include('user_view.header')
+@include('user.header')
 <head>
     <title></title>
 </head>
@@ -109,5 +109,5 @@
 </div>
 </body>
 
-@include('user_view.footer')
+@include('user.footer')
 </html>

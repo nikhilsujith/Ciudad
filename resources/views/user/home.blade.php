@@ -67,7 +67,7 @@
                         <tr>
                             <td>
                                 <div class="box" id = "login-background-text-body">
-                                    <a href="/html/login-validate.php"> <button>Login</button></a>
+                                    <a href="/login"> <button>Login</button></a>
                                 </div>
                             </td>
                     </table>
@@ -76,5 +76,5 @@
         </div>
     </div>
     </body>
-    @include('user_view.footer')
+    @include('user.footer')
 

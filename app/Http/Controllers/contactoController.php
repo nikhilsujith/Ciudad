@@ -17,7 +17,7 @@ class contactoController extends Controller
     {
         $title = 'contacto';
         $contacto = ContactoModel::all();
-        return view('user_view.contacto',compact('contacto','title')); //pass varibles to the view
+        return view('user.contacto',compact('contacto','title')); //pass varibles to the view
     }
 
     /**
@@ -39,7 +39,7 @@ class contactoController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'cPhone' => 'required',
+            'cPhone' => 'required|min:10',
             'cName' => 'required',
             'cTitle' => 'required',
             'cDesc' => 'required',

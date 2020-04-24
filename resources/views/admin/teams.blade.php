@@ -1,4 +1,4 @@
-@include('layouts.admin_view.admin_header') {{--Including header --}}
+@include('admin.header') {{--Including header --}}
 <body>
     <div id = "wrapper">
         <table class = "admin-general-table">
@@ -35,6 +35,6 @@
         ?>--}}
     </div>
 </body>
-@include('layouts.admin_view.admin_footer')
+@include('admin.footer')
 
 

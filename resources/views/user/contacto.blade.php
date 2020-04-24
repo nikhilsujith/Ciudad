@@ -1,4 +1,4 @@
-@include('user_view.header'){{--Including header --}}
+@include('user.header'){{--Including header --}}
     <body>
     <div id = "wrapper">
         <div class = "row" id="contact-desktop">
@@ -22,6 +22,7 @@
                     </div>
                 </div>
             </div>
+
             <div class = "column" id="ContactUsCol2">
                 <h2><p><B>FORMULARIO DE</B><br><I class = "orange-txt"><U>CO</U>NTACTO</I></h2>
 
@@ -34,7 +35,6 @@
                         </ul>
                     </div>
                 @endif
-
                 @if(\Session::has('success'))
                     <div class = "alert alert-success"> {{--bootstrap class--}}
                         <p>{{\Session::get('success')}}</p>
@@ -85,4 +85,4 @@
     </div>
 </body>
 </html>
-@include('user_view.footer')
+@include('user.footer')

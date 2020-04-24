@@ -1,4 +1,4 @@
-@include('layouts.admin_view.admin_header')
+@include('admin.header')
 <div id = "wrapper">
     <table class = "admin-general-table">
         <tr class = "admin-general-table-title">
@@ -19,4 +19,4 @@
         ?>--}}
     </table>
 </div>
-@include('layouts.admin_view.admin_footer')
+@include('admin.footer')
