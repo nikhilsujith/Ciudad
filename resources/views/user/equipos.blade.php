@@ -1,8 +1,19 @@
 @include('user.header')
-
-@section('equipos-body')
     <body>
     <div id = "wrapper">
+
+{{--        @if (isset(Auth::user()->uName))
+            <div class = "alert alert-success success-block" id="successDiv">
+                Welcome! <strong>{{Auth::user()->uName}}</strong>
+                <a id = "logoutButton" href = "{{url('/logout')}}">Logout</a>
+            </div>
+        @else
+            <script>
+                window.location="/login";
+            </script>
+        @endif--}}
+
+
         <div id="team-images">
             <!--Board of Directors Title-->
             <div class="team-subtitles" id = "board-of-directors-team">
@@ -61,25 +72,4 @@
     </div>
     </body>
 @include('user.footer')
-<script>
-    function openNav() {
-        var e = document.getElementById("mySidenav"); //store mySidenav in e
-        var f = document.getElementById("content-wrap"); //store main in f
-        if (e.style.width=='250px'&& f.style.marginLeft=='250px') //check if both are expanded
-        { //if expanded, revert to 0
-            e.style.width='0px';
-            f.style.marginLeft='0px';
-        }
-        else //if not expanded, expand to 250 px
-        {
-            e.style.width='250px';
-            f.style.marginLeft='250px';
-        }
-    }
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("content-wrap").style.marginLeft = "0";
-
-    }
-</script>
 </html>

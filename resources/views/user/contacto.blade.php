@@ -1,6 +1,19 @@
 @include('user.header'){{--Including header --}}
     <body>
     <div id = "wrapper">
+
+{{--        @if (isset(Auth::user()->uName))
+            <div class = "alert alert-success success-block" id="successDiv">
+                Welcome! <strong>{{Auth::user()->uName}}</strong>
+                <a id = "logoutButton" href = "{{url('/logout')}}">Logout</a>
+            </div>
+        @else
+            <script>
+                window.location="/login";
+            </script>
+        @endif--}}
+
+
         <div class = "row" id="contact-desktop">
             <div class = "column" id="ContactUsCol1">
                 <h2 class = "font_style" ><p><B >NEUSTRAS &nbsp</B><I class="orange-txt">REDES<BR><U>SOC</U>IALES</I>

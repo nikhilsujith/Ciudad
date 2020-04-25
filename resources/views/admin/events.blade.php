@@ -6,7 +6,7 @@
             <th>ID</th>
             <th>Title</th>
             <th>Organizer</th>
-            <th>Location</th>``
+            <th>Location</th>
             <th>Spots</th>
             <th>Spots Left</th>
             <th>Description</th>

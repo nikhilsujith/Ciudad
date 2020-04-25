@@ -46,6 +46,13 @@ Route::get('/login','LoginController@showLogin');
 Route::post('/doLogin','LoginController@doLogin');
 Route::get('/successLogin','LoginController@successLogin');
 Route::get('/logout','LoginController@logout');
+
+/*User Dashboard Routes*/
+Route::get('OrganizeEvents','EventsController@showEvents'); //display organize page
+Route::get('ParticipateEvent','PageController@ParticipateEvent'); //display participate page
+Route::post('AddEvents','EventsController@AddEvents');
+
+
 //Admin Routes ------------------------------------------------------------------------------------------------|
 
 Route::prefix('/admin')->namespace('Admin')->group(function(){

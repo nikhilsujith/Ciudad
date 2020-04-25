@@ -78,7 +78,10 @@ class loginController extends Controller
     }
 
     function successLogin(){
-        return view('user.dashboard');
+        #if login successfull return user dashboard
+
+        $title =  'User Dashboard';
+        return view('user.dashboard',compact('title'));
     }
 
     function logout(){

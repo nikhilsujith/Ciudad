@@ -1180,3 +1180,14 @@ body {
 #logoutButton{
     float: right;
 }
+
+/*User Dashboard Page*/
+#user-dashboard-card{
+    display: inline-block;
+    /*border-style: solid;*/
+}
+
+#user-dashboard-events-background{
+    width: 100%;
+    height: 30vh;
+}

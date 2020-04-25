@@ -9,5 +9,9 @@ Use Auth;
 
 class PageController extends Controller
 {
-
+    /*------------------------USER DASHBOARD---------------------------------*/
+    function ParticipateEvent(){
+        $title = 'Participate in an Event';
+        return view('user.participate',compact('title'));
+    }
 }
