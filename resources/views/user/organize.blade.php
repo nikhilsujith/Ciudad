@@ -22,6 +22,7 @@
 </head>
 <body>
     <div id = "wrapper">
+        {{--RETURNS VALIDATION SUCCESS OR FAIL--}}
         @if(count($errors)>0)
             <div class = "alert alert-danger"> {{--bootstrap class--}}
                 <ul>
@@ -35,7 +36,7 @@
             <div class = "alert alert-success"> {{--bootstrap class--}}
                 <p>{{\Session::get('success')}}</p>
             </div>
-    @endif
+        @endif
 
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -101,6 +102,14 @@
                         <td>{{$row['eSpots']}}</td>
                         <td>{{$row['eDate']}}</td>
                         <td>{{$row['eDesc']}}</td>
+{{--                        <td><a href = "{{action('EventsController@ParticipateEvent',$row['eName'])}}">Participate</a></td>--}}
+                        <td style="border-style: none;">
+                            <form action='ParticipateEvents'>
+                                <input name = 'pName' type="hidden" value="{{Auth::user()->uName}}"/>
+                                <input name = 'iName' type="hidden" value="{{$row['eName']}}"/>
+                                <button type="submit" style="margin-left: 1%;height: 4vh; font-size: 10px; padding: 0px;">Participate!</button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </table>

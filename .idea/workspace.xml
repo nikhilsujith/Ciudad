@@ -2,25 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91d2ea5e-6977-4f7f-9b26-386acc67cc74" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/EventsModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/EventsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_04_25_003346_create_events-table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_04_25_041202_create_participants_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/events-background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/participate-background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/organize.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/participate.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/ParticipateModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EventsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EventsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/ciudad.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/ciudad.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/events.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/events.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/contacto.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/contacto.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/user/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/equipos.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/equipos.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/organize.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/organize.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/participate.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/participate.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -192,6 +180,7 @@
       <workItem from="1587741376965" duration="1269000" />
       <workItem from="1587742993209" duration="30000" />
       <workItem from="1587770028944" duration="17409000" />
+      <workItem from="1587789105234" duration="8922000" />
     </task>
     <servers />
   </component>
@@ -220,10 +209,10 @@
       <screen x="0" y="23" width="1280" height="752" />
     </state>
     <state x="141" y="38" key="SettingsEditor/0.23.1280.752@0.23.1280.752" timestamp="1587582068662" />
-    <state x="305" y="99" width="670" height="676" key="search.everywhere.popup" timestamp="1587788385634">
+    <state x="305" y="99" width="670" height="676" key="search.everywhere.popup" timestamp="1587794059109">
       <screen x="0" y="23" width="1280" height="752" />
     </state>
-    <state x="305" y="99" width="670" height="676" key="search.everywhere.popup/0.23.1280.752/1280.23.1020.741@0.23.1280.752" timestamp="1587788385634" />
+    <state x="305" y="99" width="670" height="676" key="search.everywhere.popup/0.23.1280.752/1280.23.1020.741@0.23.1280.752" timestamp="1587794059109" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

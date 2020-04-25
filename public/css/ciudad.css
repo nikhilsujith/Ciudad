@@ -1113,19 +1113,20 @@ body {
 }
 
 .admin-general-table th{
-  box-shadow: 10px 0 100px 0 rgba(100, 10, 100, 1);
+  box-shadow: 10px 0 0px 0 rgba(0, 10, 0, 1);
   background-color: purple;
   color: white;
   text-align: center;
 }
 .admin-general-table td{
   /*border-style: solid;*/
-
   text-align: center;
-  color: white;
-  background-image: url("../images/login-page-background.jpg");
+  /*color: white;*/
+  /*background-image: url("../images/login-page-background.jpg");*/
   background-position: center;
-
+    border-style: solid;
+    border-color: purple;
+    border-width: 1px;
 }
 .admin-ID-col{
   width: 10%;

@@ -49,8 +49,10 @@ Route::get('/logout','LoginController@logout');
 
 /*User Dashboard Routes*/
 Route::get('OrganizeEvents','EventsController@showEvents'); //display organize page
-Route::get('ParticipateEvent','PageController@ParticipateEvent'); //display participate page
+Route::get('ParticipateEvents','EventsController@ParticipateEvents'); //Registers event participation
+Route::get('MyParticipation','EventsController@MyParticipation'); //Registers event participation
 Route::post('AddEvents','EventsController@AddEvents');
+
 
 
 //Admin Routes ------------------------------------------------------------------------------------------------|

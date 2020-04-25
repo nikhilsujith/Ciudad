@@ -32,13 +32,13 @@
                  <div class="card-image">
                      <img class = "btn btn-success" id = "user-dashboard-events-background" src = "{{url('/images/events-background.jpg')}}">
                  </div>
-                 <a>Organize an Event</a>
+                 <button class = "btn btn-success" style="width: 100%; height: 10%; margin-bottom: 1%;">Organize | Participate </button>
              </a>
-             <a type="hidden" href="/ParticipateEvent">
+             <a type="hidden" href="MyParticipation">
                  <div class="card-image">
                      <img class = "btn btn-secondary" id = "user-dashboard-events-background" src = "{{url('/images/participate-background.jpg')}}">
                  </div>
-                 <a>Participate an Event</a>
+                 <button class = "btn btn-secondary" style="width: 100%; height: 10%; margin-bottom: 1%;">My Participation</button>
              </a>
 {{--         </div>--}}
      </div>
