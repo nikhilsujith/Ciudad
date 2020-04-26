@@ -2,13 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91d2ea5e-6977-4f7f-9b26-386acc67cc74" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/ParticipateModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EventsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EventsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/ciudad.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/ciudad.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/organize.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/organize.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/participate.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/participate.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminLoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminLoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/events.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/events.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/issues.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/issues.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/participants.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/participants.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/teams.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/teams.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -136,7 +141,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
@@ -181,6 +186,10 @@
       <workItem from="1587742993209" duration="30000" />
       <workItem from="1587770028944" duration="17409000" />
       <workItem from="1587789105234" duration="8922000" />
+      <workItem from="1587829678101" duration="2326000" />
+      <workItem from="1587832416918" duration="355000" />
+      <workItem from="1587833990248" duration="372000" />
+      <workItem from="1587882913070" duration="280000" />
     </task>
     <servers />
   </component>
@@ -191,6 +200,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="363" y="209" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587882966841">
+      <screen x="0" y="23" width="1280" height="752" />
+    </state>
+    <state x="363" y="209" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1280.752@0.23.1280.752" timestamp="1587882966841" />
     <state x="402" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1587700886384">
       <screen x="0" y="23" width="1280" height="752" />
     </state>
@@ -218,9 +231,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/login.blade.php</url>
-          <line>2</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/resources/views/admin/teams.blade.php</url>
+          <line>3</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

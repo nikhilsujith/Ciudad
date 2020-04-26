@@ -1,4 +1,18 @@
 @include('admin.header') {{--Including header --}}
+
+{{--Login Session Check---------------------------------------------------------BEGIN--}}
+@if (isset(Auth::user()->uName))
+    <div class = "alert alert-success success-block" id="successDiv">
+        Welcome! <strong>{{Auth::user()->uName}}</strong>
+        <a id = "logoutButton" href = "{{url('admin/logout')}}">Logout</a>
+    </div>
+@else
+    <script>
+        window.location="/admin";
+    </script>
+@endif
+{{--Login Session Check---------------------------------------------------------END--}}
+
 <body>
 <div id = "wrapper">
     <table class = "admin-general-table">
@@ -11,39 +25,11 @@
             <th>Spots Left</th>
             <th>Description</th>
         </tr>
-
-{{--        <?php
-        while ($row=$events->fetch()) { //fetch data from events table
-            echo '<tr>';
-            echo'<td>
-                                    <form method="post" action="event_edit.php">
-                                        <button title = "Edit This Entry" id="admin-team-id-button" name="user_name" value='.$row["eID"].'>'.$row["eID"].'</button>
-                                     </form></td>';
-            echo'<td>'.$row["eName"].'</td>';
-            echo'<td>'.$row["eOrganizer"].'</td>';
-            echo'<td>'.$row["eLocation"] . '</td>';
-            echo'<td>'.$row["eSpot"].'</td>';
-            if($row["eSpotRemaining"] == NULL){
-                echo'<td>'.$row["eSpot"].'</td>';
-            }
-            else{
-                echo '<td>'.$row["eSpotRemaining"].'</td>';
-            }
-            echo'<td>'.$row["eDesc"].'</td>';
-        }
-        ?>--}}
     </table>
-{{--    <?php
-    echo'
-        <div class="row" id="admin-events-table-addButton">
-            <form  method="post" action = "event_add.php">
-                <div class="db-nameCards-editButton"><button><b class="orange-txt">+</b>Event</button></div>
-            </form>
-        </div>
-    ';
-    ?>--}}
 </div>
 </body>
+
+
 @include('admin.footer')
 
 

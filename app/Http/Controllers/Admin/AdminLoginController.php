@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\QueryException;
 use Exception;
+use Auth;
 
 class AdminLoginController extends Controller
 {
@@ -34,7 +35,7 @@ class AdminLoginController extends Controller
             $Admin->aPassword = $request->input('aPassword');
             $Admin->aEmail = $request->input('aEmail');
 
-        $Admin->save(); //saves inicio inputs
+        $Admin->save(); //saves admin inputs
         return redirect('admin/')->with('success','Admin User Registered');
 
     }
@@ -64,7 +65,7 @@ class AdminLoginController extends Controller
 
     function logout(){
         Auth::logout();
-        return redirect('admin/');
+        return redirect('admin');
     }
 
 

@@ -1,7 +1,7 @@
 @include('admin.header')
 
 <div id="wrapper">
-    {{--ERROR / SUCCESS ALERT--}}
+{{--    --}}{{--ERROR / SUCCESS ALERT--}}{{--
     @if(isset(Auth::user()->uName))
         <script>
             window.location('/successLogin');
@@ -12,7 +12,9 @@
             <button type="button" class = "close" data-dismiss = "alert">X</button>
             <strong>{{$message}}</strong>
         </div>
-    @endif
+    @endif--}}
+
+    {{--Error Validation----------------------------------------------------------------------------Begin --}}
     @if(count($errors)>0)
         <div class = "alert alert-danger"> {{--bootstrap class--}}
             <ul>
@@ -22,14 +24,15 @@
             </ul>
         </div>
     @endif
-
     @if(\Session::has('success'))
         <div class = "alert alert-success"> {{--bootstrap class--}}
             <p>{{\Session::get('success')}}</p>
         </div>
     @endif
+    {{--Error Validation----------------------------------------------------------------------------END --}}
 
-         <div>
+
+    <div>
             <div id="loginValidate-contain">
                 <h2><B>Admin</B>  <I class = "orange-txt"><U>Lo</U>gin</I></h2>
                 <div>
@@ -56,7 +59,7 @@
     Admin Registration
 </button>
 
-<!-- Modal -->
+<!-- Admin Register Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

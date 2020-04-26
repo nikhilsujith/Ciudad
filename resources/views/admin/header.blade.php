@@ -28,7 +28,7 @@
         <div id="head-tabs">
             <a href="/admin/teams">Team &nbsp/</a>
             <a href="/admin/events">Events &nbsp/</a>
-            <a href="/admin/participants">Participants &nbsp/</a>
+{{--            <a href="/admin/participants">Participants &nbsp/</a>--}}
             <a href="/admin/issues">Issues</a>
         </div>
     </div>
@@ -46,7 +46,7 @@
         <div id="mySidenav" class="sidenav">
             <a href="/admin/teams">Team</a>
             <a href="/admin/events">Events</a>
-            <a href="/admin/participants">Participants</a>
+{{--            <a href="/admin/participants">Participants</a>--}}
             <a href="/admin/issues">Issues</a>
         </div>
     </nav>

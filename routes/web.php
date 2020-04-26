@@ -67,5 +67,5 @@ Route::prefix('/admin')->namespace('Admin')->group(function(){
     /*Admin Login Routes*/
     Route::post('/doAdminLogin','AdminLoginController@doAdminLogin');
     Route::get('/successAdminLogin','AdminLoginController@successAdminLogin');
-    Route::get('/logout','LoginController@logout');
+    Route::get('/logout','AdminLoginController@logout');
 });
