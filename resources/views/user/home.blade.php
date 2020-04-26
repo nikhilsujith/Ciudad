@@ -77,5 +77,6 @@
         </div>
     </div>
     </body>
+
     @include('user.footer')
 
