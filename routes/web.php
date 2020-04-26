@@ -53,13 +53,13 @@ Route::get('ParticipateEvents','EventsController@ParticipateEvents'); //Register
 Route::get('MyParticipation','EventsController@MyParticipation'); //Registers event participation
 Route::post('AddEvents','EventsController@AddEvents');
 
-
+Route::resource('teams','TeamsAdminController');
 
 //Admin Routes ------------------------------------------------------------------------------------------------|
 
 Route::prefix('/admin')->namespace('Admin')->group(function(){
     Route::get('/','AdminLoginController@index');
-    Route::get('/teams','TeamsAdminController@index');
+    
     Route::get('/events','EventsAdminController@index');
     Route::get('/participants','ParticipantsAdminController@index');
     Route::get('/issues','IssuesAdminController@index');
