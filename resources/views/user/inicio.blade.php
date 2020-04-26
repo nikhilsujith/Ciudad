@@ -159,10 +159,37 @@
                 </div>
             </div>
         </div><!--        Our Value Cards End-->
+
+        {{--Overview--}}
         <div id = "inicio-events-div" class = "row">
             <div class = "column" id="inicio-events-div-eventList">
-
+                <div class = "column inicio-events-number" id="inicio-events-numberOfForums">
+                    <div>
+                        <div class = "row inicio-event-iconTitle">Events</div>
+                        <img src="https://img.icons8.com/wired/32/000000/event-accepted-tentatively.png" title = "Events"/>
+                    </div>
+                    <div id = "inicio-events-number">{{isset($eventsCount) ? $eventsCount : '100'}}</div>
+                </div>
+                <div class = "column inicio-events-number" id="inicio-events-numberOfParticipants">
+                    <div>
+                        <div class = "row inicio-event-iconTitle">Partipants</div>
+                        <img id = "inicio-event-participantImg"src="https://img.icons8.com/windows/32/000000/conference-foreground-selected.png" title="Participants"/></div>
+                    <div>{{isset($participantsCount) ? $participantsCount: '100'}}</div>
+                </div>
+                <div class = "column inicio-events-number" id="inicio-events-numberOfEvents">
+                    <div>
+                        <div class = "row inicio-event-iconTitle">Users</div>
+                        <img src="https://img.icons8.com/windows/32/000000/check-male.png" title="User"/></div>
+                    <div>{{isset($usersCount) ? $usersCount: '100'}}</div>
+                </div>
+                <div class = "column inicio-events-number" id="inicio-events-numberOfSpots">
+                    <div>
+                        <div class = "row inicio-event-iconTitle">Forums</div>
+                        <img src="https://img.icons8.com/carbon-copy/32/000000/help.png" title="forums"/></div>
+                    <div>{{isset($forumsCount) ? $forumsCount: '100'}}</div>
+                </div>
             </div>
+
             <div class = "column" id="inicio-events-div-register" >
                 <div class="row" id="inicio-events-div-register-title">
                     <h4>Registrate Con <I class="orange-txt">Nosotros</I><br></h4>
@@ -170,7 +197,7 @@
                 <div class="row" id="inicio-events-div-register-subTitle">
                     Para estas informado de nuestas actividades y eventos
                 </div>
-
+{{----------------------------------USER REGISTRATION-----------------------------------------------}}
                 <div class="row" id="inicio-events-div-register-body">
                     <form method="POST" action="/RegisterUser">
                         {{csrf_field()}}
@@ -316,5 +343,7 @@
         </div>
     </div>
 </div>
+</div>
 </body>
+@include('user.footer')
 </html>

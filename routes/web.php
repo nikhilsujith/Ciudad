@@ -40,7 +40,6 @@ Route::post('/RegisterUser','loginController@store');
 Route::get('contacto','contactoController@index');//direct to controller to get page
 Route::post('/ContactoAdd','contactoController@store'); //to insert into db
 
-
 /*User Login Routes*/
 Route::get('/login','LoginController@showLogin');
 Route::post('/doLogin','LoginController@doLogin');
@@ -53,10 +52,10 @@ Route::get('ParticipateEvents','EventsController@ParticipateEvents'); //Register
 Route::get('MyParticipation','EventsController@MyParticipation'); //Registers event participation
 Route::post('AddEvents','EventsController@AddEvents');
 
-
+/*User Footer Routes*/
+Route::post('/AddFooterEmail','contactoController@AddFooterEmail');
 
 //Admin Routes ------------------------------------------------------------------------------------------------|
-
 Route::prefix('/admin')->namespace('Admin')->group(function(){
     Route::get('/','AdminLoginController@index');
     Route::get('/teams','TeamsAdminController@index');
@@ -64,8 +63,10 @@ Route::prefix('/admin')->namespace('Admin')->group(function(){
     Route::get('/participants','ParticipantsAdminController@index');
     Route::get('/issues','IssuesAdminController@index');
     Route::post('AdminAdd','AdminLoginController@store');
+
     /*Admin Login Routes*/
     Route::post('/doAdminLogin','AdminLoginController@doAdminLogin');
     Route::get('/successAdminLogin','AdminLoginController@successAdminLogin');
     Route::get('/logout','AdminLoginController@logout');
 });
+//Admin Routes End------------------------------------------------------------------------------------------------|

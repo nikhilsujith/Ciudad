@@ -8,7 +8,7 @@ class ContactoModel extends Model
 {
     protected $table = 'contacto';
 
-    protected $fillable = ['cPhone','cName', 'cTitle', 'cDesc'];
+    protected $fillable = ['cPhone','cName', 'cTitle', 'cDesc','cEmail'];
 
 
     /*

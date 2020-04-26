@@ -7,9 +7,11 @@
                     <h2  class="font_style"><B>Contacte con </B><em class = "orange-txt"> Nosotros</em></h2>
                 </div>
                 <div class="column">
-                    <form name = "footer-form" id = "footer-form" method = "post">
-                        <input id = "footer-field-email" type = "email" placeholder="Enter Email">
+                    <form name = "footerEmail" id = "footer-form" method = "post" action="/AddFooterEmail">
+                       {{csrf_field()}}
+                        <input name="footerEmailInput" id = "footer-field-email" type = "email" placeholder="Enter Email">
                         <button id="footer1-email-submitBtn" type="submit">Enviar</button>
+                    </form>
                         <script>
                             document.addEventListener("DOMContentLoaded", function() {
                                 var elements = document.getElementsByTagName("INPUT");

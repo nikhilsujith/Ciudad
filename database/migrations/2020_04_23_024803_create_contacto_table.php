@@ -15,10 +15,11 @@ class CreateContactoTable extends Migration
     {
         Schema::create('contacto', function (Blueprint $table) {
             $table->id();
-            $table->string('cPhone');
-            $table->string('cName');
-            $table->string('cTitle');
-            $table->string('cDesc');
+            $table->string('cPhone')->default('');
+            $table->string('cEmail')->nullable();
+            $table->string('cName')->default('');
+            $table->string('cTitle')->default('');
+            $table->string('cDesc')->default('');
         });
     }
 
