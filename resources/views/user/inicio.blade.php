@@ -74,8 +74,11 @@
                 <img src="https://img.icons8.com/nolan/24/menu.png"1 onClick=openNav()>
             </div>
             <div id="inicio-head-main-banner-title">
-                <B id = "title-inicio-banner-gente">GENTE<br></B>
-                <I id="title-inicio-banner-yCiudad">Y CIUDAD</I>
+{{--                <B id = "title-inicio-banner-gente">GENTE<br></B>--}}
+{{--                <I id="title-inicio-banner-yCiudad">Y CIUDAD</I>               --}}
+
+                <B id = "title-inicio-banner-gente">NIKHIL<br></B>
+                <I id="title-inicio-banner-yCiudad">SUJITH</I>
             </div>
             <div id = "login-background-text-body-inicio">
                 Buscamos marcar un punto de partida para la transformación de nuestras <br>
