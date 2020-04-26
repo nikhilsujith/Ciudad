@@ -46,10 +46,10 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'host' => env('DB_HOST', 'db4free.net'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'ciudad'),
-            'username' => env('DB_USERNAME', 'root'),
+            'database' => env('DB_DATABASE', 'ciudad_laravel'),
+            'username' => env('DB_USERNAME', 'nik98hil'),
             'password' => env('DB_PASSWORD', 'root*123'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
