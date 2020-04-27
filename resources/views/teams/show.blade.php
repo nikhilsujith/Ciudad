@@ -15,26 +15,33 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
-                {{ $teams->tName }}
+                {{ $team->tName }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Location:</strong>
-                {{ $teams->tLocation }}
+                {{ $team->tLocation }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Board:</strong>
-                {{ $teams->tBoard }}
+                {{ $team->tBoard }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Image:</strong>
+<<<<<<< Updated upstream
                 {{ $teams->tImage }}
+=======
+                {{ $team->tImage }}
+>>>>>>> Stashed changes
             </div>
         </div>
         
     </div>
+    
+</body>
+@include('admin.footer')

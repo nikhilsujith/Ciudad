@@ -34,11 +34,11 @@
             <td>{{ $team->tBoard }}</td>
             <td>{{ $team->tImage }}</td>
             <td>
-                <form action="{{ route('teams.destroy',$teams->id) }}" method="POST">
+            <form action="{{ route('teams.destroy',$team->id) }}" method="POST">
    
-                    <a class="btn btn-info" href="{{ route('teams.show',$teams->id) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route('teams.show',$team->id) }}">Show</a>
     
-                    <a class="btn btn-primary" href="{{ route('teams.edit',$teams->id) }}">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('teams.edit',$team->id) }}">Edit</a>
    
                     @csrf
                     @method('DELETE')
@@ -52,3 +52,6 @@
   
     {!! $teams->links() !!}
       
+
+</body>
+@include('admin.footer')

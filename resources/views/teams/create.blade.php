@@ -57,3 +57,6 @@
     </div>
    
 </form>
+</div>
+</body>
+@include('admin.footer')

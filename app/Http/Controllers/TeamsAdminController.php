@@ -15,9 +15,9 @@ class TeamsAdminController extends Controller
     public function index()
     {
         $teams = Teams::latest()->paginate(5);
-
+  
         return view('teams.index',compact('teams'))
-                ->with('i',(request()->input('page',1) - 1) *5);
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -55,9 +55,9 @@ class TeamsAdminController extends Controller
      * @param  \App\Teams  $teams
      * @return \Illuminate\Http\Response
      */
-    public function show(Teams $teams)
+    public function show(Teams $team)
     {
-        return view('teams.show', compact('teams'));
+        return view('teams.show', compact('team'));
     }
 
     /**
@@ -66,9 +66,9 @@ class TeamsAdminController extends Controller
      * @param  \App\Teams  $teams
      * @return \Illuminate\Http\Response
      */
-    public function edit(Teams $teams)
+    public function edit(Teams $team)
     {
-        return view('teams.edit',compact('teams'));
+        return view('teams.edit',compact('team'));
     }
 
     /**
@@ -78,7 +78,7 @@ class TeamsAdminController extends Controller
      * @param  \App\Teams  $teams
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Teams $teams)
+    public function update(Request $request, Teams $team)
     {
         $request->validate([
             'tName' => 'required',
@@ -97,7 +97,7 @@ class TeamsAdminController extends Controller
      * @param  \App\Teams  $teams
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Teams $teams)
+    public function destroy(Teams $team)
     {
         $team->delete();
         return redirect()->route('teams.index')

@@ -22,7 +22,7 @@
         </div>
     @endif
   
-    <form action="{{ route('teams.update',$teams->id) }}" method="POST">
+    <form action="{{ route('teams.update',$team->id) }}" method="POST">
         @csrf
         @method('PUT')
    
@@ -30,25 +30,25 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
-                <input type="text" name="tName" class="form-control" placeholder="Name">
+                <input type="text" name="name" value="{{ $team->tName }}" class="form-control" placeholder="Name">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Location:</strong>
-                <input type="text" name="tLocation" class="form-control" placeholder="Location">
+                <input type="text" name="name" value="{{ $team->tLocation }}" class="form-control" placeholder="Location">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Board:</strong>
-                <input type="text" name="tBoard" class="form-control" placeholder="Board">
+                <input type="text" name="name" value="{{ $team->tBoard }}" class="form-control" placeholder="Board">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Image:</strong>
-                <input type="text" name="tImage" class="form-control" placeholder="Image">
+                <input type="text" name="name" value="{{ $team->tImage}}" class="form-control" placeholder="Image">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
@@ -57,3 +57,6 @@
     </div>
    
     </form>
+    
+</body>
+@include('admin.footer')
