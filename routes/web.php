@@ -53,19 +53,17 @@ Route::get('ParticipateEvents','EventsController@ParticipateEvents'); //Register
 Route::get('MyParticipation','EventsController@MyParticipation'); //Registers event participation
 Route::post('AddEvents','EventsController@AddEvents');
 
-<<<<<<< Updated upstream
-=======
 //Teams route
 
->>>>>>> Stashed changes
 Route::resource('teams','TeamsAdminController');
+
 
 //Admin Routes ------------------------------------------------------------------------------------------------|
 
 Route::prefix('/admin')->namespace('Admin')->group(function(){
     Route::get('/','AdminLoginController@index');
     
-    Route::get('/events','EventsAdminController@index');
+    Route::resource('events','EventsAdminController');
     Route::get('/participants','ParticipantsAdminController@index');
     Route::get('/issues','IssuesAdminController@index');
     Route::post('AdminAdd','AdminLoginController@store');
