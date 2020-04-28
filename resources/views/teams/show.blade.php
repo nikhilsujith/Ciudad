@@ -1,4 +1,5 @@
 @include('admin.header') {{--Including header --}}
+<div id = "wrapper">
 
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -6,11 +7,12 @@
                 <h2> Show Team Member Details</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('teams.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ URL::to('teams/') }}"> Back</a>
             </div>
         </div>
     </div>
    
+    <div class = "container">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
@@ -18,30 +20,32 @@
                 {{ $team->tName }}
             </div>
         </div>
+        </div>
+        <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Location:</strong>
                 {{ $team->tLocation }}
             </div>
         </div>
+        </div>
+        <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Board:</strong>
                 {{ $team->tBoard }}
             </div>
         </div>
+        </div>
+        <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Image:</strong>
-<<<<<<< Updated upstream
-                {{ $teams->tImage }}
-=======
                 {{ $team->tImage }}
->>>>>>> Stashed changes
             </div>
         </div>
-        
+     </div>   
     </div>
-    
+  </div>  
 </body>
 @include('admin.footer')

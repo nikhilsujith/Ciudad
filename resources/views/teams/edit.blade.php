@@ -1,12 +1,12 @@
 @include('admin.header') {{--Including header --}}
-
+<div class="container">
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <h2>Edit Team Member</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('teams.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ URL::to('teams/') }}"> Back</a>
             </div>
         </div>
     </div>
@@ -21,8 +21,11 @@
             </ul>
         </div>
     @endif
-  
-    <form action="{{ route('teams.update',$team->id) }}" method="POST">
+    
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            
+    <!-- <form action="{{ route('teams.update',$team->id) }}" method="POST">
         @csrf
         @method('PUT')
    
@@ -56,7 +59,36 @@
         </div>
     </div>
    
-    </form>
+    </form> -->
     
+
+    {{ Form::model($team, array('action' => array('TeamsAdminController@update', $team->id), 'method' => 'PUT')) }}
+
+	<div class="form-group">
+		{{ Form::label('tName', 'Name') }}
+		{{ Form::text('tName', null, array('class' => 'form-control')) }}
+	</div>
+
+	<div class="form-group">
+		{{ Form::label('tLocation', 'Location') }}
+		{{ Form::text('tLocation', null, array('class' => 'form-control')) }}
+	</div>
+
+	<div class="form-group">
+		{{ Form::label('tBoard', 'Board') }}
+		{{ Form::text('tBoard', null, array('class' => 'form-control')) }}
+	</div>
+    <div class="form-group">
+		{{ Form::label('tImage', 'Image') }}
+		{{ Form::text('tImage', null, array('class' => 'form-control')) }}
+        
+	</div>
+    {{ Form::submit('Edit', array('class' => 'btn btn-primary')) }}
+
+         {{ Form::close() }}
+</div>
+</div>
+</div>
+	
 </body>
 @include('admin.footer')

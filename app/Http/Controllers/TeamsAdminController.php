@@ -86,7 +86,7 @@ class TeamsAdminController extends Controller
             'tBoard'=>'required',
             'tImage'=>'required',
         ]);
-        $teams->update($request->all());
+        $team->update($request->all());
         return redirect()->route('teams.index')
                          ->with('success','Team member updated');
     }
@@ -99,8 +99,19 @@ class TeamsAdminController extends Controller
      */
     public function destroy(Teams $team)
     {
-        $team->delete();
+        // $team->delete();
+        // return redirect()->route('teams.index')
+        //                  ->with('success','Team member deleted');
+        $t = Teams::where('id',$team->id);
+        $t->delete();
         return redirect()->route('teams.index')
                          ->with('success','Team member deleted');
+
+       $team_member = Nerd::find($id);
+		$team_member->delete();
+
+		// redirect
+		Session::flash('message', 'Successfully deleted team Member!');
+		return Redirect::to('teams/');
     }
 }

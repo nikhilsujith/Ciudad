@@ -7,7 +7,7 @@
             <h2>Add Team Member</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('teams.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ URL::to('teams/') }}"> Back</a>
         </div>
     </div>
 </div>
@@ -22,8 +22,33 @@
         </ul>
     </div>
 @endif
-   
-<form action="{{ route('teams.store') }}" method="POST">
+<div class ="container">
+{{ Form::open(array('url' => 'teams')) }}
+
+<div class="form-group">
+		{{ Form::label('tName', 'Name') }}
+		{{ Form::text('tName', null, array('class' => 'form-control')) }}
+	</div>
+
+	<div class="form-group">
+		{{ Form::label('tLocation', 'Location') }}
+		{{ Form::text('tLocation', null, array('class' => 'form-control')) }}
+	</div>
+
+	<div class="form-group">
+		{{ Form::label('tBoard', 'Board') }}
+		{{ Form::text('tBoard', null, array('class' => 'form-control')) }}
+	</div>
+    <div class="form-group">
+		{{ Form::label('tImage', 'Image') }}
+		{{ Form::text('tImage', null, array('class' => 'form-control')) }}
+        
+	</div>
+    {{ Form::submit('Add', array('class' => 'btn btn-primary')) }}
+
+         {{ Form::close() }}
+</div>
+<!-- <form action="{{ route('teams.store') }}" method="POST">
     @csrf
   
      <div class="row">
@@ -56,7 +81,7 @@
         </div>
     </div>
    
-</form>
+</form> -->
 </div>
 </body>
 @include('admin.footer')

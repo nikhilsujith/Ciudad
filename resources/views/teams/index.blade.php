@@ -1,12 +1,13 @@
 @include('admin.header') {{--Including header --}}
-
+<body>
+<div class = "container">
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <h2>Edit teams</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('teams.create') }}"> Add new team member</a>
+                <a class="btn btn-success" href="{{ URL::to('teams/create') }}"> Add new team member</a>
             </div>
         </div>
     </div>
@@ -34,17 +35,29 @@
             <td>{{ $team->tBoard }}</td>
             <td>{{ $team->tImage }}</td>
             <td>
-            <form action="{{ route('teams.destroy',$team->id) }}" method="POST">
-   
+            <!-- <form action="deleteTeams" method="POST">
+                    <input type="hidden" name = "value_Delete" value="{$team->id}">
                     <a class="btn btn-info" href="{{ route('teams.show',$team->id) }}">Show</a>
     
                     <a class="btn btn-primary" href="{{ route('teams.edit',$team->id) }}">Edit</a>
+        
    
                     @csrf
                     @method('DELETE')
       
-                    <button type="submit" class="btn btn-danger">Delete</button>
+            <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
+                 -->
+                 {{ Form::open(array('url' => 'teams/' . $team->id, 'class' => 'pull-right')) }}
+					{{ Form::hidden('_method', 'DELETE') }}
+					{{ Form::submit('Delete', array('class' => 'btn btn-warning')) }}
+				{{ Form::close() }}
+
+				<!-- show the nerd (uses the show method found at GET /nerds/{id} -->
+				<a class="btn btn-info" href="{{ URL::to('teams/' . $team->id) }}">Show</a>
+
+				<!-- edit this nerd (uses the edit method found at GET /nerds/{id}/edit -->
+				<a class="btn btn-info" href="{{ URL::to('teams/' . $team->id . '/edit') }}">Edit </a>
             </td>
         </tr>
         @endforeach
@@ -52,6 +65,6 @@
   
     {!! $teams->links() !!}
       
-
+</div>
 </body>
 @include('admin.footer')

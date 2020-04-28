@@ -53,6 +53,11 @@ Route::get('ParticipateEvents','EventsController@ParticipateEvents'); //Register
 Route::get('MyParticipation','EventsController@MyParticipation'); //Registers event participation
 Route::post('AddEvents','EventsController@AddEvents');
 
+<<<<<<< Updated upstream
+=======
+//Teams route
+
+>>>>>>> Stashed changes
 Route::resource('teams','TeamsAdminController');
 
 //Admin Routes ------------------------------------------------------------------------------------------------|
