@@ -107,11 +107,5 @@ class TeamsAdminController extends Controller
         return redirect()->route('teams.index')
                          ->with('success','Team member deleted');
 
-       $team_member = Nerd::find($id);
-		$team_member->delete();
-
-		// redirect
-		Session::flash('message', 'Successfully deleted team Member!');
-		return Redirect::to('teams/');
     }
 }

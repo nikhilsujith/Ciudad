@@ -18,8 +18,8 @@
         </div>
     @endif
    
-    <table class="table table-bordered">
-        <tr>
+    <table class = "admin-general-table">
+        <tr class = "admin-general-table-title">
             <th>No</th>
             <th>Event Name</th>
             <th>Name of user</th>
@@ -31,6 +31,7 @@
             <th>Description</th>
             <th width="280px">Action</th>
         </tr>
+     
         @foreach ($events as $event)
         <tr>
             <td>{{ ++$i }}</td>

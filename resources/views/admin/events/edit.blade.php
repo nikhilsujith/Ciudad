@@ -28,7 +28,7 @@
     
     
 
-        {{ Form::model($event, array('action' => array('EventsAdminController@update', $event->id), 'method' => 'PUT')) }}
+        {{ Form::model($event, array('action' => array('Admin\EventsAdminController@update', $event->id), 'method' => 'PUT')) }}
 
 	<div class="form-group">
 		{{ Form::label('eName', 'Name') }}

@@ -18,8 +18,13 @@
         </div>
     @endif
    
+<<<<<<< Updated upstream
     <table class="table table-bordered">
         <tr>
+=======
+    <table class = "admin-general-table">
+        <tr class = "admin-general-table-title">
+>>>>>>> Stashed changes
             <th>No</th>
             <th>Name</th>
             <th>Location</th>

@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\EventsModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers;
+use Illuminate\Support\Facades\Route;
+
 
 class EventsAdminController extends Controllers\Controller
 {
@@ -40,11 +42,10 @@ class EventsAdminController extends Controllers\Controller
             'eOrganizer'=>'required',
             'eLocation'=>'required',
             'eSpots'=>'required',
-            'eSpotRem'=>'required',
             'eDesc'=>'required',
         ]);
         EventsModel::create($request->all());
-        return redirect()->route('admin/events.index')
+        return redirect()->route('admin/events')
                          ->with('success','Event created');
     }
 
@@ -87,9 +88,13 @@ class EventsAdminController extends Controllers\Controller
             'eSpots'=>'required',
             'eDesc'=>'required',
         ]);
+        // dd($request);
         $event->update($request->all());
-        return redirect()->route('admin/events.index')
-                         ->with('success','Event updated');
+        return redirect('/admin/events/');
+        // dd(123);
+        // Route::redirect('/admin/');
+        // return redirect()->route('/admin/')
+                        //  ->with('success','Event updated');
     }
 
     /**
@@ -103,7 +108,7 @@ class EventsAdminController extends Controllers\Controller
       
         $t = EventsModel::where('id',$event->id);
         $t->delete();
-        return redirect()->route('admin/events.index')
+        return redirect()->route('admin/events')
                          ->with('success','Event deleted');}
 
      
