@@ -58,10 +58,10 @@ Route::post('/AddFooterEmail','contactoController@AddFooterEmail');
 //Admin Routes ------------------------------------------------------------------------------------------------|
 Route::prefix('/admin')->namespace('Admin')->group(function(){
     Route::get('/','AdminLoginController@index');
-    Route::get('/teams','TeamsAdminController@index');
-    Route::get('/events','EventsAdminController@index');
-    Route::get('/participants','ParticipantsAdminController@index');
-    Route::get('/issues','IssuesAdminController@index');
+    Route::resource('teams','TeamsAdminController');
+    Route::resource('events','EventsAdminController');
+    Route::resource('/participants','ParticipantsAdminController');
+    Route::resource('/issues','IssuesAdminController');
     Route::post('AdminAdd','AdminLoginController@store');
 
     /*Admin Login Routes*/
