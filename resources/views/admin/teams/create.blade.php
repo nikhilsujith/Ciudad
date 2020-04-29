@@ -7,7 +7,7 @@
             <h2>Add Team Member</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ URL::to('teams/') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ URL::to('admin/teams/index') }}"> Back</a>
         </div>
     </div>
 </div>
@@ -23,7 +23,7 @@
     </div>
 @endif
 <div class ="container">
-{{ Form::open(array('url' => 'teams')) }}
+{{ Form::open(array('url' => 'admin\teams')) }}
 
 <div class="form-group">
 		{{ Form::label('tName', 'Name') }}

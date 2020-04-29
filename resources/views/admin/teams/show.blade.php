@@ -7,7 +7,7 @@
                 <h2> Show Team Member Details</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ URL::to('teams/') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ URL::to('admin/teams/') }}"> Back</a>
             </div>
         </div>
     </div>

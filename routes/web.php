@@ -55,14 +55,13 @@ Route::post('AddEvents','EventsController@AddEvents');
 
 //Teams route
 
-Route::resource('teams','TeamsAdminController');
 
 
 //Admin Routes ------------------------------------------------------------------------------------------------|
 
 Route::prefix('/admin')->namespace('Admin')->group(function(){
     Route::get('/','AdminLoginController@index');
-    
+    Route::resource('teams','TeamsAdminController');
     Route::resource('events','EventsAdminController');
     Route::get('/participants','ParticipantsAdminController@index');
     Route::resource('/issues','IssuesAdminController');

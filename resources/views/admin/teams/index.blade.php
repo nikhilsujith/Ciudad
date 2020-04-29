@@ -7,7 +7,7 @@
                 <h2>Edit teams</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ URL::to('teams/create') }}"> Add new team member</a>
+                <a class="btn btn-success" href="{{ URL::to('admin/teams/create') }}"> Add new team member</a>
             </div>
         </div>
     </div>
@@ -18,13 +18,8 @@
         </div>
     @endif
    
-<<<<<<< Updated upstream
-    <table class="table table-bordered">
-        <tr>
-=======
     <table class = "admin-general-table">
         <tr class = "admin-general-table-title">
->>>>>>> Stashed changes
             <th>No</th>
             <th>Name</th>
             <th>Location</th>
@@ -53,16 +48,16 @@
             <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
                  -->
-                 {{ Form::open(array('url' => 'teams/' . $team->id, 'class' => 'pull-right')) }}
+                 {{ Form::open(array('url' => 'admin/teams/' . $team->id, 'class' => 'pull-right')) }}
 					{{ Form::hidden('_method', 'DELETE') }}
 					{{ Form::submit('Delete', array('class' => 'btn btn-warning')) }}
 				{{ Form::close() }}
 
 				<!-- show the nerd (uses the show method found at GET /nerds/{id} -->
-				<a class="btn btn-info" href="{{ URL::to('teams/' . $team->id) }}">Show</a>
+				<a class="btn btn-info" href="{{ URL::to('admin/teams/' . $team->id) }}">Show</a>
 
 				<!-- edit this nerd (uses the edit method found at GET /nerds/{id}/edit -->
-				<a class="btn btn-info" href="{{ URL::to('teams/' . $team->id . '/edit') }}">Edit </a>
+				<a class="btn btn-info" href="{{ URL::to('admin/teams/' . $team->id . '/edit') }}">Edit </a>
             </td>
         </tr>
         @endforeach

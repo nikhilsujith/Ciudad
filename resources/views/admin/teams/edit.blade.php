@@ -6,7 +6,7 @@
                 <h2>Edit Team Member</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ URL::to('teams/') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ URL::to('admin/teams/') }}"> Back</a>
             </div>
         </div>
     </div>
@@ -62,7 +62,7 @@
     </form> -->
     
 
-    {{ Form::model($team, array('action' => array('TeamsAdminController@update', $team->id), 'method' => 'PUT')) }}
+    {{ Form::model($team, array('action' => array('Admin\TeamsAdminController@update', $team->id), 'method' => 'PUT')) }}
 
 	<div class="form-group">
 		{{ Form::label('tName', 'Name') }}

@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 class EventsAdminController extends Controllers\Controller
 {
     public function index()
-    {
+    { 
         $events = EventsModel::latest()->paginate(5);
   
         return view('admin/events.index',compact('events'))

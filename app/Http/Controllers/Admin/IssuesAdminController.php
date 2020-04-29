@@ -44,8 +44,7 @@ class IssuesAdminController extends Controllers\Controller
             
         ]);
         ContactoModel::create($request->all());
-        return redirect()->route('admin/issues')
-                         ->with('success','Issue created');
+        return redirect('/admin/issues/');
     }
 
     /**

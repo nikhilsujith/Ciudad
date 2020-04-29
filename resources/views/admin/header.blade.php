@@ -37,7 +37,21 @@
             <div class="column" id="menu-icon">
                 <img src="https://img.icons8.com/nolan/24/menu.png"1 onClick=openNav()>
             </div>
-            <h2  class = "fonts_style, white"><span id="myText">{{isset($title) ? $title : 'title'}}</span></h2> <!--Span with #id gets title of the page-->
+            
+            <h2  class = "fonts_style, white"><span id="myText">
+
+                 @if($events ?? $event ?? '')
+                     {{'Events'}}
+                 @elseif($issues ?? $issue ?? '')
+                     {{'Issues'}}
+                 @elseif($teams ?? $team ?? '')
+                     {{'Teams'}}
+                 @elseif($participants ?? $participants ?? '')
+                      {{'Participants'}}
+                 @endif
+                 
+                
+            </span></h2> <!--Span with #id gets title of the page-->
         </div>
     </div>
 
