@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Mail\ContactoMail;
 use App\ContactoModel;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Mail;
 
 class contactoController extends Controller
 {
@@ -53,8 +53,14 @@ class contactoController extends Controller
         $contacto->cDesc = $request->input('cDesc');
 
         $contacto->save();
+        $data = [];
+        Mail::send('email.user.contaco',$data,function($message){
+              $message->from('from@example.com');
+              $message->to('from@example.com');
 
-        return redirect('/contacto')->with('success','Request Registered');
+        });
+        
+        return redirect('user.contacto')->with('success','Request Registered');
     }
 
     /**

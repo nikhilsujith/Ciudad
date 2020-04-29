@@ -63,7 +63,7 @@ Route::prefix('/admin')->namespace('Admin')->group(function(){
     Route::get('/','AdminLoginController@index');
     Route::resource('teams','TeamsAdminController');
     Route::resource('events','EventsAdminController');
-    Route::get('/participants','ParticipantsAdminController@index');
+    Route::resource('/participants','ParticipantsAdminController');
     Route::resource('/issues','IssuesAdminController');
     Route::post('AdminAdd','AdminLoginController@store');
     /*Admin Login Routes*/
