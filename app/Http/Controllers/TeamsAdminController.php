@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
 use App\Teams;
 use Illuminate\Http\Request;
-use App\Http\Controllers;
-use Illuminate\Support\Facades\Route;
-class TeamsAdminController extends Controllers\Controller
+
+class TeamsAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +16,7 @@ class TeamsAdminController extends Controllers\Controller
     {
         $teams = Teams::latest()->paginate(5);
   
-        return view('admin/teams.index',compact('teams'))
+        return view('teams.index',compact('teams'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -28,7 +27,7 @@ class TeamsAdminController extends Controllers\Controller
      */
     public function create()
     {
-        return view('admin/teams.create');
+        return view('teams.create');
     }
 
     /**
@@ -46,7 +45,8 @@ class TeamsAdminController extends Controllers\Controller
             'tImage'=>'required',
         ]);
         Teams::create($request->all());
-        return redirect('/admin/teams/');
+        return redirect()->route('teams.index')
+                         ->with('success','Team member added');
     }
 
     /**
@@ -57,7 +57,7 @@ class TeamsAdminController extends Controllers\Controller
      */
     public function show(Teams $team)
     {
-        return view('admin/teams.show', compact('team'));
+        return view('teams.show', compact('team'));
     }
 
     /**
@@ -68,7 +68,7 @@ class TeamsAdminController extends Controllers\Controller
      */
     public function edit(Teams $team)
     {
-        return view('admin/teams.edit',compact('team'));
+        return view('teams.edit',compact('team'));
     }
 
     /**
@@ -87,7 +87,8 @@ class TeamsAdminController extends Controllers\Controller
             'tImage'=>'required',
         ]);
         $team->update($request->all());
-        return redirect('/admin/teams/');
+        return redirect()->route('teams.index')
+                         ->with('success','Team member updated');
     }
 
     /**
@@ -103,7 +104,8 @@ class TeamsAdminController extends Controllers\Controller
         //                  ->with('success','Team member deleted');
         $t = Teams::where('id',$team->id);
         $t->delete();
-        return redirect('/admin/teams/');
+        return redirect()->route('teams.index')
+                         ->with('success','Team member deleted');
 
     }
 }

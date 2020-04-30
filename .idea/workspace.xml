@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="91d2ea5e-6977-4f7f-9b26-386acc67cc74" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminLoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminLoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admin.blade.php" afterDir="false" />
@@ -13,6 +14,10 @@
       <change beforePath="$PROJECT_DIR$/resources/views/admin/teams.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/teams.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/user/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/resources/views/user/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/home.blade.php" afterDir="false" />
+>>>>>>> refs/remotes/origin/master
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +144,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
@@ -185,6 +190,16 @@
       <workItem from="1587770028944" duration="17409000" />
       <workItem from="1587789105234" duration="8922000" />
       <workItem from="1587829678101" duration="2326000" />
+<<<<<<< HEAD
+=======
+      <workItem from="1587832416918" duration="355000" />
+      <workItem from="1587833990248" duration="372000" />
+      <workItem from="1587882913070" duration="280000" />
+      <workItem from="1587883468148" duration="475000" />
+      <workItem from="1587885389549" duration="195000" />
+      <workItem from="1587927290835" duration="4291000" />
+      <workItem from="1587931928154" duration="182000" />
+>>>>>>> refs/remotes/origin/master
     </task>
     <servers />
   </component>
@@ -195,16 +210,20 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="363" y="209" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587882966841">
+      <screen x="0" y="23" width="1280" height="752" />
+    </state>
+    <state x="363" y="209" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1280.752@0.23.1280.752" timestamp="1587882966841" />
     <state x="402" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1587700886384">
       <screen x="0" y="23" width="1280" height="752" />
     </state>
     <state x="402" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1280.752/1280.23.1020.741@0.23.1280.752" timestamp="1587670856209" />
     <state x="402" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1280.752@0.23.1280.752" timestamp="1587700886384" />
-    <state x="378" y="161" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1587779490679">
+    <state x="378" y="161" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1587927971437">
       <screen x="0" y="23" width="1280" height="752" />
     </state>
     <state x="378" y="161" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1280.752/1280.23.1020.741@0.23.1280.752" timestamp="1587779490679" />
-    <state x="378" y="161" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1280.752@0.23.1280.752" timestamp="1587659889239" />
+    <state x="378" y="161" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1280.752@0.23.1280.752" timestamp="1587927971437" />
     <state x="100" y="123" width="1080" height="552" key="DiffContextDialog" timestamp="1587742561909">
       <screen x="0" y="23" width="1280" height="752" />
     </state>
@@ -222,9 +241,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/login.blade.php</url>
-          <line>2</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/resources/views/admin/teams.blade.php</url>
+          <line>3</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/admin/teams.blade.php</url>

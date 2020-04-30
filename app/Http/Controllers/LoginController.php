@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\ContactoModel;
+use App\EventsModel;
 use App\InicioModel;
+use App\ParticipateModel;
 use Illuminate\Http\Request;
 use Validator;
 Use Auth;
@@ -12,7 +15,11 @@ class loginController extends Controller
 
     public function index()
     {
-        return view('user.inicio'); //return view inicio
+        $eventsCount = EventsModel::all()->count(); //retrieve number of rows from events table using the Event Model
+        $participantsCount = ParticipateModel::all()->count();//retrieve number of rows from participants table using the ParticipateModel
+        $forumsCount = ContactoModel::all()->count(); //retrieve number of rows from contacto table using the ContactoModel
+        $usersCount = InicioModel::all()->count(); //retrieve number of rows from users table using the InicoiModel
+        return view('user.inicio',compact('eventsCount','participantsCount','forumsCount','usersCount')); //return view inicio
     }
 
     /**
@@ -87,5 +94,14 @@ class loginController extends Controller
     function logout(){
         Auth::logout();
         return redirect('/login');
+    }
+
+    /*---------------------------Events Overview--------------------------------------------------------------*/
+    public function numberOfEvents(){
+        $title = 'Organize an Event';
+        $events = EventsModel::all()->toArray();
+
+        return view ('user.inicio',compact('events','title'));
+
     }
 }

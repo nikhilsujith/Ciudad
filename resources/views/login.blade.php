@@ -2,7 +2,6 @@
 <body>
 <div id = "wrapper">
 
-
     {{--ERROR / SUCCESS ALERT--}}
     @if(isset(Auth::user()->uName))
         <script>
@@ -24,7 +23,6 @@
             </ul>
         </div>
     @endif
-
     @if(\Session::has('success'))
         <div class = "alert alert-success"> {{--bootstrap class--}}
             <p>{{\Session::get('success')}}</p>
@@ -32,9 +30,8 @@
     @endif
 
     <div id="loginValidate-contain">
-        <h2><B>F Por favor ingrese </B><br><I class = "orange-txt"><U>los</U>detalles requeridos</I></h2>
+        <h2><B>Log</B><I class = "orange-txt"><U>in</U></I></h2>
         <div>
-
             <form name = "loginValidateForm1" action="/doLogin" method = "post">
                 {{csrf_field()}}
                 Email<br>
