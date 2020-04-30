@@ -67,7 +67,8 @@
                         <tr>
                             <td>
                                 <div class="box" id = "login-background-text-body">
-                                    <a href="/login"> <button>Login</button></a>
+                                    <a href="login"> <button>User</button> </a>
+                                    <a href="admin"> <button>Admin</button></a>
                                 </div>
                             </td>
                     </table>

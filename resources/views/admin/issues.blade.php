@@ -1,4 +1,17 @@
 @include('admin.header')
+{{--Login Session Check---------------------------------------------------------BEGIN--}}
+@if (isset(Auth::user()->uName))
+    <div class = "alert alert-success success-block" id="successDiv">
+        Welcome! <strong>{{Auth::user()->uName}}</strong>
+        <a id = "logoutButton" href = "{{url('admin/logout')}}">Logout</a>
+    </div>
+@else
+    <script>
+        window.location="/admin";
+    </script>
+@endif
+{{--Login Session Check---------------------------------------------------------END--}}
+
 <div id = "wrapper">
     <table class = "admin-general-table">
         <tr class = "admin-general-table-title">
@@ -7,16 +20,6 @@
             <th>Issue Title</th>
             <th>Issue Description</th>
         </tr>
-{{--        <?php
-        while ($row=$issue->fetch()) { //fetch data from events table
-            echo '<tr>';
-            echo'<td>'.$row["iName"].'</td>';
-            echo'<td>'.$row["iPhone"].'</td>';
-            echo'<td>'.$row["iTitle"] . '</td>';
-            echo'<td>'.$row["iComment"].'</td>';
-        }
-        echo '</tr>';
-        ?>--}}
     </table>
 </div>
 @include('admin.footer')
