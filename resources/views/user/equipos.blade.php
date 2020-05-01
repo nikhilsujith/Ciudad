@@ -45,5 +45,6 @@
             </div>
     </div>
 </body>
-@include('user.footer')
 </html>
+@include('user.footer')
+
