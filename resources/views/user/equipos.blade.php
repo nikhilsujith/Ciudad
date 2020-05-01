@@ -1,75 +1,49 @@
 @include('user.header')
     <body>
-    <div id = "wrapper">
-
-{{--        @if (isset(Auth::user()->uName))
-            <div class = "alert alert-success success-block" id="successDiv">
-                Welcome! <strong>{{Auth::user()->uName}}</strong>
-                <a id = "logoutButton" href = "{{url('/logout')}}">Logout</a>
+    <div  class="container-fluid" id = "wrapper">
+        <div class = "container-fluid" id="BOD">
+            <b  class = "imageTilesHeader-BOD"> Equipo de <i class="orange-txt" >Direccion</i></b><br>
+            <div class = "row">
+            @foreach($teams as $row)
+                @if($row['tBoard'] == 'Director' OR $row['tBoard'] == 'director' OR $row['tBoard'] == 'board of director' OR $row['tBoard'] == 'board of directors' OR $row['tBoard'] == 'Board of Directors' OR $row['tBoard'] == 'Board Of Directors')
+                        <div class = "col-4" style="border-style: solid;">
+                            <img src ="/images/{{$row['avatar']}}" style="width: 30%;" class="img-fluid "><br>
+                            <caption>{{$row["tName"]}}</caption><br>
+                            <caption>{{$row["tLocation"]}}</caption>
+                        </div>
+            @endif
+            @endforeach
             </div>
-        @else
-            <script>
-                window.location="/login";
-            </script>
-        @endif--}}
-
-
-        <div id="team-images">
-            <!--Board of Directors Title-->
-            <div class="team-subtitles" id = "board-of-directors-team">
-                <div class = "row">
-                    <b  class = "imageTilesHeader-BOD"> Equipo de <i class="orange-txt" >Direccion</i></b><br>
-                </div>
-            </div>
-            <!--Board of Directors Images-->
-            <div class = "row row-team-BOD">
- {{--               <?php
-                while($row=$board->fetch())
-                    echo"
-
-                    <div class = \"column, imageTilesBOD\">
-                        <img src = \"../images/".$row["tImage"]."\" ><br>
-                        <caption>".$row["tName"]."</caption><br>
-						<caption>".$row["tLocation"]."</caption>
-
-                    </div>
-                ";
-                ?>--}}
-            </div>
-            <!--Multi Disiplinary Teams-->
-            <!--Multi Disiplinary Team TITLE-->
-            <div class="team-subtitles" id = "multi-disiplinary-team">
-                <div class = "row">
-                    <b  class = "fonts_style, imageTilesHeader-BOD"> Equipo de <i class="orange-txt" >Trabajo Multidiscilina</i></b><br>
-                </div>
-            </div>
-       {{-- <?php
-        $count = 0;
-        $count1 =0;
-        while($row=$multiTeam->fetch()){
-            if($count%4==0){
-                echo '<div class = "row row-team-BOD">';
-                $count1+=3;
-            }
-            echo "<div class = \"column, imageTiles\">
-                        <img src = \"../images/".$row["tImage"]."\" ><br>
-                        <caption>".$row["tName"]."</caption><br>
-                        <caption>".$row["tLocation"]."</caption>
-                            </div>";
-
-
-            if($count1 == $count){
-                echo '</div>';
-            }
-            $count+=1;
-        }
-
-
-        ?>--}}
-        <!--Multi Disiplinary Team Images-->
         </div>
+
+
+        @php
+            $count = 0;
+            $count1 = 0;
+        @endphp
+        <div class = "container-fluid" id="BOD">
+            <b  class = "imageTilesHeader-BOD"> Equipo de <i class="orange-txt" >Multidisciplinary</i></b><br>
+            @php if($count%4 == 0)
+            echo '<div class = "row" style="background-color: #06D85F;">';
+            $count1 += 3;
+            @endphp
+            @foreach($teams as $row)
+                @if($row['tBoard'] == 'multidisciplinary' OR $row['tBoard'] == 'Multidisciplinary' OR $row['tBoard'] == 'multi'OR $row['tBoard'] == 'other')
+                        <div    style="border-style: solid;">
+                            <img src ="/images/{{$row['avatar']}}" style="width: 30%;" class="img-fluid "><br>
+                            <caption>{{$row["tName"]}}</caption><br>
+                            <caption>{{$row["tLocation"]}}</caption>
+                        </div>
+                    @php
+                        if($count1 == $count){
+                            echo '</div>';
+                        }
+                        $count += 1;
+                    @endphp
+            @endif
+            @endforeach
+            </div>
     </div>
-    </div>
-    </body>
+</body>
 @include('user.footer')
 </html>

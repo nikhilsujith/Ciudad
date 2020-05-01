@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Teams extends Model
 {
     protected $fillable =[
-        'tName', 'tLocation', 'tBoard', 'tImage'
+        'tName', 'tLocation', 'tBoard', 'tImage','select_file'
     ];
 }

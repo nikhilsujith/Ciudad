@@ -39,11 +39,11 @@ class contactoController extends Controller
         $contacto->save();
         $data = [];
         Mail::send('email.user.contaco',$data,function($message){
-              $message->from('from@example.com');
-              $message->to('from@example.com');
+              $message->from('nik98hil@gmail.com');
+              $message->to('nikhilsujith@outlook.com');
 
         });
-        
+
         return redirect('user.contacto')->with('success','Request Registered');
     }
 

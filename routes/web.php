@@ -22,15 +22,20 @@ Route::get('/', function () {
     return view('user.home',compact('title'));
 });
 
-Route::get('/equipos', function () {
+/*Route::get('/equipos', function () {
     $title = "Equipos";
     return view('user.equipos',compact('title'));
-});
+});*/
+
+
 
 Route::get('/nosotros', function () {
     $title = "nosotros";
     return view('user.nosotros',compact('title'));
 });
+
+//Equipos page routes
+Route::get('/equipos','EquiposController@display');
 
 //inicio page routes
 Route::get('inicio','loginController@index');
@@ -55,18 +60,35 @@ Route::post('AddEvents','EventsController@AddEvents');
 /*User Footer Routes*/
 Route::post('/AddFooterEmail','contactoController@AddFooterEmail');
 
+
 //Admin Routes ------------------------------------------------------------------------------------------------|
 Route::prefix('/admin')->namespace('Admin')->group(function(){
     Route::get('/','AdminLoginController@index');
-    Route::resource('teams','TeamsAdminController');
-    Route::resource('events','EventsAdminController');
-    Route::resource('/participants','ParticipantsAdminController');
-    Route::resource('/issues','IssuesAdminController');
-    Route::post('AdminAdd','AdminLoginController@store');
+//    Route::get('teams','TeamsAdminController@showTeams');
+    Route::get('/events','EventsAdminController@index');
+    Route::get('/participants','ParticipantsAdminController@index');
+    Route::get('/issues','IssuesAdminController@index');
+    Route::post('AdminAdd','AdminLoginController@store@index');
 
     /*Admin Login Routes*/
     Route::post('/doAdminLogin','AdminLoginController@doAdminLogin');
     Route::get('/successAdminLogin','AdminLoginController@successAdminLogin');
     Route::get('/logout','AdminLoginController@logout');
+
+    /*Admin Team Routes*/
+    Route::post('/uploadfile','TeamsAdminController@upload'); //add member and member photo
+    Route::get('editTeams','TeamsAdminController@editTeams'); //edit team member
+    Route::patch('updateTeams','TeamsAdminController@updateTeams'); //edit team member
+    Route::get('deleteTeams','TeamsAdminController@deleteTeams'); //edit team member
+
+    /*Admin Event Routes*/
+    Route::get('OrganizeEvents','EventsController@showEvents'); //display organize page
+    Route::post('AddEvents','EventsAdminController@AddEvents'); //add events
+    Route::get('eventsEdit','EventsAdminController@EditEvents'); //edit team member
+    Route::patch('UpdateEvents','EventsAdminController@UpdateEvents'); //edit events
+    Route::get('DeleteEvents','EventsAdminController@DeleteEvents'); //delete events
+
 });
 //Admin Routes End------------------------------------------------------------------------------------------------|
+
+

@@ -26,9 +26,9 @@
     <div class = "head-section">
         <img id = "main-logo" src="{{ URL::to('/images/main_logo1.png') }}">
         <div id="head-tabs">
-            <a href="/admin/teams">Team &nbsp/</a>
-            <a href="/admin/events">Events &nbsp/</a>
-{{--            <a href="/admin/participants">Participants &nbsp/</a>--}}
+            <a href="successAdminLogin">Team &nbsp/</a>
+            <a href="events">Events &nbsp/</a>
+            <a href="/admin/participants">Participants &nbsp/</a>
             <a href="/admin/issues">Issues</a>
         </div>
     </div>
@@ -37,30 +37,17 @@
             <div class="column" id="menu-icon">
                 <img src="https://img.icons8.com/nolan/24/menu.png"1 onClick=openNav()>
             </div>
-            
-            <h2  class = "fonts_style, white"><span id="myText">
-
-                 @if($events ?? $event ?? '')
-                     {{'Events'}}
-                 @elseif($issues ?? $issue ?? '')
-                     {{'Issues'}}
-                 @elseif($teams ?? $team ?? '')
-                     {{'Teams'}}
-                 @elseif($participants ?? $participants ?? '')
-                      {{'Participants'}}
-                 @endif
-                 
-                
-            </span></h2> <!--Span with #id gets title of the page-->
+            <h2  class = "fonts_style, white">
+                <span id="myText">{{isset($title) ? $title : 'title'}}</span>
+            </h2> <!--Span with #id gets title of the page-->
         </div>
     </div>
-
     <!--Hamburger Menu for Mobile Navigation-->
     <nav id="slide-nav">
         <div id="mySidenav" class="sidenav">
             <a href="/admin/teams">Team</a>
             <a href="/admin/events">Events</a>
-{{--            <a href="/admin/participants">Participants</a>--}}
+            <a href="/admin/participants">Participants</a>
             <a href="/admin/issues">Issues</a>
         </div>
     </nav>

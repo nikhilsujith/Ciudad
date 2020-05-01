@@ -2,108 +2,88 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Teams;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Controllers;
-use Illuminate\Support\Facades\Route;
-class TeamsAdminController extends Controllers\Controller
+use App\Teams;
+use App\Http\Requests;
+use Illuminate\Support\Facades\DB;
+use MongoDB\Driver\Session;
+
+class TeamsAdminController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $teams = Teams::latest()->paginate(5);
-  
-        return view('admin/teams.index',compact('teams'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    function upload(Request $request)
     {
-        return view('admin/teams.create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $request->validate([
+        $this->validate($request, [
             'tName' => 'required',
-            'tLocation'=>'required',
-            'tBoard'=>'required',
-            'tImage'=>'required',
+            'tLocation' => 'required',
+            'tBoard' => 'required',
+            'select_file'  => 'required|image|mimes:jpeg,jpg,png,gif|max:2048'
         ]);
-        Teams::create($request->all());
-        return redirect('/admin/teams/');
+
+
+        $teams = new Teams(); //object of TEams class
+
+        $teams->tName = $request->input('tName');
+        $teams->tLocation= $request->input('tLocation');
+        $teams->tBoard = $request->input('tBoard');
+
+        $image = $request->file('select_file'); //selecting file from input
+        $avatar = $image->getClientOriginalName(); //getting the file name
+
+        $teams->avatar = $avatar; //store file name to avatar column
+
+        $teams->save();
+
+        $image->move(public_path('images'), $avatar);
+
+        return back()->with('success', 'Team Member Added Successfully')->with('path', $avatar);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Teams  $teams
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Teams $team)
-    {
-        return view('admin/teams.show', compact('team'));
+    public function editTeams(Request $request){
+
+        $title = "Edit Teams";
+
+        $teamID = $request->all();
+
+        $teamsAll = Teams::where('id',$teamID)->get();
+
+        return view('admin/teamsEdit',compact('teamsAll','title'));
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     * 
-     * @param  \App\Teams  $teams
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Teams $team)
-    {
-        return view('admin/teams.edit',compact('team'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Teams  $teams
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Teams $team)
-    {
-        $request->validate([
+    public function updateTeams(Request $request){
+        $this->validate($request, [
             'tName' => 'required',
-            'tLocation'=>'required',
-            'tBoard'=>'required',
-            'tImage'=>'required',
+            'tLocation' => 'required',
+            'tBoard' => 'required',
+            'select_file'  => 'required|image|mimes:jpeg,jpg,png,gif|max:2048'
         ]);
-        $team->update($request->all());
-        return redirect('/admin/teams/');
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Teams  $teams
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Teams $team)
-    {
-        // $team->delete();
-        // return redirect()->route('teams.index')
-        //                  ->with('success','Team member deleted');
-        $t = Teams::where('id',$team->id);
-        $t->delete();
-        return redirect('/admin/teams/');
+        $image = $request->file('select_file'); //selecting file from input
+        $avatar = $image->getClientOriginalName(); //getting the file name
+
+        $TeamModel = new Teams();
+
+        $teams = $TeamModel->where('id',$request->input('tid'))->update(['tName' => $request->input('tName')]);
+        $teams = $TeamModel->where('id',$request->input('tid'))->update(['tLocation' => $request->input('tLocation')]);
+        $teams = $TeamModel->where('id',$request->input('tid'))->update(['tBoard' => $request->input('tBoard')]);
+        $teams = $TeamModel->where('id',$request->input('tid'))->update(['avatar' => $avatar]);
+
+        $image->move(public_path('images'), $avatar);
+        return redirect('admin/successAdminLogin')->with('success','Data Updated');
 
     }
+
+    public function deleteTeams(Request $request){
+
+
+        $teamID = $request->all();
+
+        $teamsDelete = Teams::where('id',$teamID)->delete();
+
+        return redirect('admin/successAdminLogin')->with('success','Team Member Deleted');
+
+    }
+
 }

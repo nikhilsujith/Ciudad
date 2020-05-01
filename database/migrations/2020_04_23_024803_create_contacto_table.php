@@ -15,10 +15,11 @@ class CreateContactoTable extends Migration
     {
         Schema::create('contacto', function (Blueprint $table) {
             $table->id();
-            $table->string('cPhone');
-            $table->string('cName');
-            $table->string('cTitle');
-            $table->string('cDesc');
+            $table->string('cPhone')->default('FROM FOOTER SUBMISSION');
+            $table->string('cName')->default('FROM FOOTER SUBMISSION');
+            $table->string('cTitle')->default('FROM FOOTER SUBMISSION');
+            $table->string('cDesc')->default('FROM FOOTER SUBMISSION');
+            $table->string('cEmail')->nullable();
             $table->timestamps();
         });
     }

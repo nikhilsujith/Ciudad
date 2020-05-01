@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\AdminModel;
 use App\InicioModel;
+use App\ParticipateModel;
+use App\Teams;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\QueryException;
@@ -60,7 +62,13 @@ class AdminLoginController extends Controller
     }
 
     function successAdminLogin(){
-        return view('admin.teams');
+        #if login successfull return user dashboard
+
+        $title = "Admin > Teams";
+
+        $adminTeams= Teams::all()->toArray();
+
+        return view ('admin.teams',compact('title','adminTeams'));
     }
 
     function logout(){

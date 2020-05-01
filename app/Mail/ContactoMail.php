@@ -18,7 +18,7 @@ class ContactoMail extends Mailable
      */
     public function __construct()
     {
-        
+
     }
 
     /**
@@ -29,5 +29,6 @@ class ContactoMail extends Mailable
     public function build()
     {
         return $this->markdown('views\email\user\contaco');
+
     }
 }

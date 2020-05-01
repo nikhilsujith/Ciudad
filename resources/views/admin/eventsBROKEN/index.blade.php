@@ -7,17 +7,18 @@
                 <h2>Edit Events</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ URL::to('admin/events/create') }}"> Add new event</a>
+{{--                <a class="btn btn-success" href="{{ URL::to('admin/events/create') }}"> Add new event</a>--}}
+                <a class="btn btn-success" href="/OrganizeEvents"> Add new event</a>
             </div>
         </div>
     </div>
-   
+
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
             <p>{{ $message }}</p>
         </div>
     @endif
-   
+
     <table class = "admin-general-table">
         <tr class = "admin-general-table-title">
             <th>No</th>
@@ -31,7 +32,7 @@
             <th>Description</th>
             <th width="280px">Action</th>
         </tr>
-     
+
         @foreach ($events as $event)
         <tr>
             <td>{{ ++$i }}</td>
@@ -44,8 +45,8 @@
             <td>{{ $event->eSpotsRem }}</td>
             <td>{{ $event->eDesc }}</td>
             <td>
-           
-                 
+
+
                  {{ Form::open(array('url' => 'admin/events/' . $event->id, 'class' => 'pull-right')) }}
 					{{ Form::hidden('_method', 'DELETE') }}
 					{{ Form::submit('Delete', array('class' => 'btn btn-warning')) }}
@@ -60,9 +61,9 @@
         </tr>
         @endforeach
     </table>
-  
+
     {!! $events->links() !!}
-      
+
 </div>
 </body>
 @include('admin.footer')
