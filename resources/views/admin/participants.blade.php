@@ -45,7 +45,11 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
+<<<<<<< Updated upstream
                     <h3 class="modal-title" id="exampleModalLabel"><U class="orange-txt"><i>Organize</i></U>  Participant Form</h3>
+=======
+                    <h3 class="modal-title" id="exampleModalLabel"><U class="orange-txt"><i>Organize</i></U>  Event Form</h3>
+>>>>>>> Stashed changes
                     <a type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </a>
@@ -55,6 +59,7 @@
                         <div class = "card" style="height: 100%; display: inline-block;margin-bottom: 10%;">
                             <form name = "loginValidateForm1" action="AddEvents" method = "post">
                                 {{csrf_field()}}
+<<<<<<< Updated upstream
                                 <label> Name</label><br>
                                 <input type ="text" class = "input-user-organizeEvents" name = "cName"/><br>
 
@@ -72,6 +77,20 @@
                         </div>
                     </div>
                     
+=======
+                                <label>Event Name</label><br>
+                                <input type ="text" class = "input-user-organizeEvents" name = "eventName"/><br>
+
+                                <label>Participant Name</label><br>
+                                <input type ="text" class = "input-user-organizeEvents" name = "participantName"/><br>
+
+
+
+                            </form>
+                        </div>
+                    </div>
+
+>>>>>>> Stashed changes
                     <div class="modal-footer">
                         <a type="button" class="btn btn-secondary" data-dismiss="modal">Close</a>
                     </div>
@@ -84,24 +103,24 @@
         <table class = "admin-general-table">
             <tr class = "admin-general-table-title">
                 <th>ID</th>
-                <th>Name</th>
-                <th>Phone</th>
-                <th>Title</th>
-                <th>Desc</th>
-                <th>Email</th>
-                
+                <th>Event Name</th>
+                <th>Participant Name</th>
+
             </tr>
             @foreach($participants as $row)
                 <tr>
                     <td>{{$row['id']}}</td>
-                    <td>{{$row['cName']}}</td>
-                    <td>{{$row['cPhone']}}</td>
-                    <td>{{$row['cTitle']}}</td>
-                    <td>{{$row['cDesc']}}</td>
-                    <td>{{$row['cEmail']}}</td>
-                    
+                    <td>{{$row['eventName']}}</td>
+                    <td>{{$row['participantName']}}</td>
+
                     <td>
-                        <form action="DeleteIssues">
+                        <form action="participantEdit">
+                            <input name = "team-id" type="hidden" value="{{$row['id']}}"/>
+                            <button type="submit" style="margin-left: 1%;height: 4vh; font-size: 10px; padding: 0px;">Edit</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="DeleteParticipants">
                             <input name = "team-id" type="hidden" value="{{$row['id']}}"/>
                             <button type="submit" style="margin-left: 1%;height: 4vh; font-size: 10px; padding: 0px;">Delete</button>
                         </form>
