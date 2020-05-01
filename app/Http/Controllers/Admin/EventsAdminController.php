@@ -48,7 +48,7 @@ class EventsAdminController extends Controllers\Controller
         $eventID = $request->all(); //get event id from view
 
         $eventDelete = EventsModel::where('id',$eventID)->delete();
-
+        
         return redirect('admin/events')->with('success','Event Deleted');
     }
 

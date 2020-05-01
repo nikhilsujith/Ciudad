@@ -1,4 +1,7 @@
+
+
 @include('user.header')
+
     <body>
     <div  class="container-fluid" id = "wrapper">
         <div class = "container-fluid" id="BOD">
@@ -16,8 +19,23 @@
             </div>
         </div>
 
+        <div class = "container-fluid" id="BOD">
+            <b  class = "imageTilesHeader-BOD"> Equipo de <i class="orange-txt" >Direccion</i></b><br>
+            <div id="gallery">
+            @foreach($teams as $row)
+                @if($row['tBoard'] == 'Multidisciplinary' OR $row['tBoard'] == 'Multidisciplinary Board' OR $row['tBoard'] == 'multidisciplinary' OR $row['tBoard'] == 'multidisciplinary' OR $row['tBoard'] == 'multidisciplinary' OR $row['tBoard'] == 'multidisciplinary')
+                        <div class = "col-md-3" style="border-style: solid;">
+                            <img src ="/images/{{$row['avatar']}}" style="width: 50%;" class="img-fluid "><br>
+                            <caption>{{$row["tName"]}}</caption><br>
+                            <caption>{{$row["tLocation"]}}</caption>
+                        </div>  
+            @endif
+            @endforeach
+            </div>
+        </div>
 
-        @php
+
+        <!-- @php
             $count = 0;
             $count1 = 0;
         @endphp
@@ -42,7 +60,7 @@
                     @endphp
             @endif
             @endforeach
-            </div>
+            </div> -->
     </div>
 </body>
 </html>

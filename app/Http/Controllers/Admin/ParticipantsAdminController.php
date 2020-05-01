@@ -11,10 +11,10 @@ use Illuminate\Support\Facades\Route;
 class ParticipantsAdminController extends Controllers\Controller
 {
     public function index()
-    { 
+    {   $title = "Participants";
         $participants = ParticipateModel::latest()->paginate(5);
   
-        return view('admin/participants.index',compact('participants'))
+        return view('admin/participants',compact('participants', 'title'))
             ->with('i', (request()->input('page', 1) - 1) * 7);
     }
 
@@ -23,92 +23,64 @@ class ParticipantsAdminController extends Controllers\Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function AddParticipants()
     {
-        return view('admin/participants.create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $request->validate([
-            'eName' => 'required',
-            'eRegUser'=>'required',
-            'eOrganizer'=>'required',
-            'eLocation'=>'required',
-            'eSpots'=>'required',
-            'eDesc'=>'required',
+        $this->validate($request, [
+            'eventName' => 'required',
+            'participantName' => 'required',
+            
         ]);
-        ParticipateModel::create($request->all());
-        return redirect()->route('admin/participants')
-                         ->with('success','participant created');
+
+        $participants = new ParticipateModel(); //object of ContactoModel class
+
+        $participants->eventName = $request->input('eventName');
+        $participants->participantName = $request->input('participantName');
+        
+
+        $participants->save();
+
+        return redirect('admin/participants')->with('success','Request Registered');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\ParticipateModel  $participants
-     * @return \Illuminate\Http\Response
-     */
-    public function show(ParticipateModel $participant)
-    {
-        return view('admin/participants.show', compact('participant'));
+
+    public function DeleteParticipants(Request $request){
+        $participantID = $request->all(); //get event id from view
+
+        $participantDelete = ParticipateModel::where('id',$participantID)->delete();
+        
+        return redirect('admin/participants')->with('success','Participant Deleted');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     * 
-     * @param  \App\ParticipateModel  $participants
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(ParticipateModel $participant)
-    {
-        return view('admin/participants.edit',compact('participant'));
+    public function EditParticipants(Request $request){
+
+        $title = "Edit Participants";
+
+        $participantID = $request->all();
+
+        $participantAll = ParticipateModel::where('id',$participantID)->get();
+
+        return view('admin/participantEdit',compact('participantAll','title'));
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     *  @param  \App\ParticipateModel  $participants
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, ParticipateModel $participant)
-    {
-        $request->validate([
-            'eName' => 'required',
-            'eRegUser'=>'required',
-            'eOrganizer'=>'required',
-            'eLocation'=>'required',
-            'eSpots'=>'required',
-            'eDesc'=>'required',
+    public function UpdateParticipants(Request $request){
+        $this->validate($request, [
+            'eventName' => 'required',
+            'participantName' => 'required',
+
         ]);
-        // dd($request);
-        $participant->update($request->all());
-        return redirect('/admin/participants/');
-        // dd(123);
-        // Route::redirect('/admin/');
-        // return redirect()->route('/admin/')
-                        //  ->with('success','participant updated');
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\ParticipateModel $participants
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(ParticipateModel $participant)
-    {
-      
-        $t = ParticipateModel::where('id',$participant->id);
-        $t->delete();
-        return redirect('admin/participants');}
+
+        $ParticipateModel = new ParticipateModel();
+
+        $participants = $ParticipateModel->where('id',$request->input('pid'))->update(['eventName' => $request->input('eventName')]);
+        $participants = $ParticipateModel->where('id',$request->input('pid'))->update(['participantName' => $request->input('participantName')]);
+        
+
+
+        return redirect('admin/participants')->with('success','Participant Updated');
+
+    }
 
      
 }

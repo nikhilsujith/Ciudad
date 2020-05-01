@@ -87,6 +87,12 @@ Route::prefix('/admin')->namespace('Admin')->group(function(){
     Route::get('eventsEdit','EventsAdminController@EditEvents'); //edit team member
     Route::patch('UpdateEvents','EventsAdminController@UpdateEvents'); //edit events
     Route::get('DeleteEvents','EventsAdminController@DeleteEvents'); //delete events
+    
+    /*Admin Participant Routes*/
+    Route::get('participantEdit','ParticipantsAdminController@EditParticipants'); //delete participants
+    Route::patch('UpdateParticipants','ParticipantsAdminController@UpdateParticipants'); //edit events
+    Route::get('DeleteParticipants','ParticipantsAdminController@DeleteParticipants'); //delete participants
+
 
 });
 //Admin Routes End------------------------------------------------------------------------------------------------|
