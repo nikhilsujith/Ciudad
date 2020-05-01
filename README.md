@@ -11,12 +11,22 @@
 
 This is a project for the Web Data Management class at UTA with Dr. Elizabeth Diaz. 
 
-##Tools Used
+<b>Tools Used</b>
 - HTML 5
 - CSS3
 - Vanilla JS
 - Laravel 
+- MySql
 - Currently hosted on Heroku at http://wdm-laravel.herokuapp.com/
+- Heroku hosting uses postgresql
+
+<b> Required Steps after Clone </b> <i>You will need to have installed Laravel beforehand -- please go to https://laravel.com/docs/7.x/installation for more instructions</i>
+1. run 'composer install' on terminal / command prompt
+2. run 'php artisan generate:key' to generate an app key 
+3. make a .env file at directory root, and update DB connection credentials
+4. update db credentials under app>config>database.php
+5. run 'php aritsan migrate' if it's your first time clonning the project / 'php artisan migrate:refresh' if you need to re-create tables in your db
+6. <i>to run the project</i> <b>'php artisan serve'</b>
 
 ## About Laravel
 
