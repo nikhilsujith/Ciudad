@@ -20,7 +20,8 @@ This is a project for the Web Data Management class at UTA with Dr. Elizabeth Di
 - Currently hosted on Heroku at http://wdm-laravel.herokuapp.com/
 - Heroku hosting uses postgresql
 
-<b> Required Steps after Clone </b> <i>You will need to have installed Laravel beforehand -- please go to https://laravel.com/docs/7.x/installation for more instructions</i>
+<b> Required Steps after Clone </b> 
+***<i>You will need to have installed Laravel beforehand -- please go to https://laravel.com/docs/7.x/installation for more instructions</i>
 1. run 'composer install' on terminal / command prompt
 2. run 'php artisan generate:key' to generate an app key 
 3. make a .env file at directory root, and update DB connection credentials
