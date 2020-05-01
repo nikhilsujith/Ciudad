@@ -9,7 +9,7 @@
 
 ## About The Project
 
-This is a project for the Web Data Management class at UTA with Dr. Elizabeth Diaz. 
+This is a project for the Web Data Management Course CSE 5335 at UTA under Dr. Elizabeth Diaz. 
 
 <b>Tools Used</b>
 - HTML 5
@@ -22,11 +22,11 @@ This is a project for the Web Data Management class at UTA with Dr. Elizabeth Di
 
 <b> Required Steps after Clone </b> 
 <br><i>You will need to have installed Laravel beforehand -- please go to https://laravel.com/docs/7.x/installation for more instructions</i>
-1. run 'composer install' on terminal / command prompt
-2. run 'php artisan generate:key' to generate an app key 
-3. make a .env file at directory root, and update DB connection credentials
-4. update db credentials under app>config>database.php
-5. run 'php aritsan migrate' if it's your first time clonning the project / 'php artisan migrate:refresh' if you need to re-create tables in your db
+1. run <b>'composer install'</b> on terminal / command prompt
+2. run <b>'php artisan generate:key'</b> to generate an app key 
+3. make a <b>.env file</b> at directory root and update DB connection credentials. [use .env.exanple as a template]
+4. update <b>db credentials under app > config > database.php</b>
+5. run <b>'php aritsan migrate'</b> to migrate all db tables
 6. <i>to run the project</i> <b>'php artisan serve'</b>
 
 ## About Laravel
