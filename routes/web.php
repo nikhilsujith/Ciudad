@@ -92,7 +92,9 @@ Route::prefix('/admin')->namespace('Admin')->group(function(){
     Route::get('participantEdit','ParticipantsAdminController@EditParticipants'); //delete participants
     Route::patch('UpdateParticipants','ParticipantsAdminController@UpdateParticipants'); //edit events
     Route::get('DeleteParticipants','ParticipantsAdminController@DeleteParticipants'); //delete participants
-
+    
+    /*Admin Issues Route*/
+    Route::get('DeleteIssues', 'IssuesAdminController@DeleteIssues');
 
 });
 //Admin Routes End------------------------------------------------------------------------------------------------|
