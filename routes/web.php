@@ -68,7 +68,7 @@ Route::prefix('/admin')->namespace('Admin')->group(function(){
     Route::get('/events','EventsAdminController@index');
     Route::get('/participants','ParticipantsAdminController@index');
     Route::get('/issues','IssuesAdminController@index');
-    Route::post('AdminAdd','AdminLoginController@store@index');
+    Route::post('AdminAdd','AdminLoginController@store');
 
     /*Admin Login Routes*/
     Route::post('/doAdminLogin','AdminLoginController@doAdminLogin');

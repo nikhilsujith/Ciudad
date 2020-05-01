@@ -1,31 +1,5 @@
 @include('admin.header')
-
-
-    {{--Error Validation----------------------------------------------------------------------------END --}}
-    <div>
         <div id="wrapper">
-            {{--Error Validation----------------------------------------------------------------------------Begin --}}
-{{--
-            @if(count($errors)>0)
-                <div class = "alert alert-danger"> --}}
-{{--bootstrap class--}}{{--
-
-                    <ul>
-                        @foreach($errors->all() as $error)
-                            <li>{{$error}}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-            @if(\Session::has('success'))
-                <div class = "alert alert-success"> --}}
-{{--bootstrap class--}}{{--
-
-                    <p>{{\Session::get('success')}}</p>
-                </div>
-            @endif
---}}
-
             @if ($message = Session::get('error'))
                 <div class = "alert alert-danger alert-block">
                     <button type="button" class = "close" data-dismiss = "alert">X</button>
