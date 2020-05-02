@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Mail\IssuesMail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,10 +22,10 @@ Route::get('/', function () {
     return view('user.home',compact('title'));
 });
 
-/*Route::get('/equipos', function () {
-    $title = "Equipos";
-    return view('user.equipos',compact('title'));
-});*/
+// Route::get('/email', function () {
+//     Mail::to('batman@email.com')->send(new IssuesMail());
+//     return new IssuesMail();
+// });
 
 
 

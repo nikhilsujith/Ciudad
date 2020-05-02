@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Mail\ContactoMail;
+use App\Mail\IssuesMail;
 use App\ContactoModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -58,6 +58,7 @@ class contactoController extends Controller
 
         $contacto->save();
 
+        Mail::to($contacto->cEmail)->send(new IssuesMail());
         return redirect('/inicio')->with('success','Thank you for reaching out to us!  A member of our team will get back to you shortly on the email you provided below!');
     }
 

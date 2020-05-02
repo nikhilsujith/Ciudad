@@ -45,11 +45,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-<<<<<<< Updated upstream
-                    <h3 class="modal-title" id="exampleModalLabel"><U class="orange-txt"><i>Organize</i></U>  Participant Form</h3>
-=======
                     <h3 class="modal-title" id="exampleModalLabel"><U class="orange-txt"><i>Organize</i></U>  Event Form</h3>
->>>>>>> Stashed changes
                     <a type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </a>
@@ -59,25 +55,6 @@
                         <div class = "card" style="height: 100%; display: inline-block;margin-bottom: 10%;">
                             <form name = "loginValidateForm1" action="AddEvents" method = "post">
                                 {{csrf_field()}}
-<<<<<<< Updated upstream
-                                <label> Name</label><br>
-                                <input type ="text" class = "input-user-organizeEvents" name = "cName"/><br>
-
-                                <label>Phone</label><br>
-                                <input type ="text" class = "input-user-organizeEvents" name = "cPhone"/><br>
-                             
-                                <label>Title</label><br>
-                                <input type ="text" class = "input-user-organizeEvents" name = "cTitle"/><br>
-                                <label>Desc</label><br>
-                                <input type ="text" class = "input-user-organizeEvents" name = "cDesc"/><br>
-                                <label>Email</label><br>
-                                <input type ="text" class = "input-user-organizeEvents" name = "cEmail"/><br>
-                              
-                            </form>
-                        </div>
-                    </div>
-                    
-=======
                                 <label>Event Name</label><br>
                                 <input type ="text" class = "input-user-organizeEvents" name = "eventName"/><br>
 
@@ -90,7 +67,6 @@
                         </div>
                     </div>
 
->>>>>>> Stashed changes
                     <div class="modal-footer">
                         <a type="button" class="btn btn-secondary" data-dismiss="modal">Close</a>
                     </div>
