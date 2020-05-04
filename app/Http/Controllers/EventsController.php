@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use App\User;
 use DB;
 use Illuminate\Support\Facades\Auth;
+use Auth;
 class EventsController extends Controller
 {
 
