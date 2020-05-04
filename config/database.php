@@ -68,19 +68,19 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'url' => env('postgres://ckttdqpcsitpeu:1571c2032468b869412c1a7a4a928e0818d0f0438ab339f5288bbf2e2d8b021e@ec2-54-152-175-141.compute-1.amazonaws.com:5432/d9ggrppd8qsmcj'),
+            'host' => env('DB_HOST', 'ec2-54-152-175-141.compute-1.amazonaws.com'),
             'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'ciudad'),
-            'username' => env('DB_USERNAME', 'root'),
-            'password' => env('DB_PASSWORD', 'root*123'),
+            'database' => env('DB_DATABASE', 'd9ggrppd8qsmcj'),
+            'username' => env('DB_USERNAME', 'ckttdqpcsitpeu'),
+            'password' => env('DB_PASSWORD', '1571c2032468b869412c1a7a4a928e0818d0f0438ab339f5288bbf2e2d8b021e'),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
             'schema' => 'public',
             'sslmode' => 'prefer',
         ],
-
+        
         'sqlsrv' => [
             'driver' => 'sqlsrv',
             'url' => env('DATABASE_URL'),
