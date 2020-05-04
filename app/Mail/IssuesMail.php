@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class ContactoMail extends Mailable
+class IssuesMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -18,7 +18,7 @@ class ContactoMail extends Mailable
      */
     public function __construct()
     {
-
+        //
     }
 
     /**
@@ -28,7 +28,6 @@ class ContactoMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('views\email\user\contaco');
-
+        return $this->markdown('email.issues');
     }
 }

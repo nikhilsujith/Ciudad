@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Mail\IssuesMail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,10 +22,10 @@ Route::get('/', function () {
     return view('user.home',compact('title'));
 });
 
-/*Route::get('/equipos', function () {
-    $title = "Equipos";
-    return view('user.equipos',compact('title'));
-});*/
+// Route::get('/email', function () {
+//     Mail::to('batman@email.com')->send(new IssuesMail());
+//     return new IssuesMail();
+// });
 
 
 
@@ -87,6 +87,14 @@ Route::prefix('/admin')->namespace('Admin')->group(function(){
     Route::get('eventsEdit','EventsAdminController@EditEvents'); //edit team member
     Route::patch('UpdateEvents','EventsAdminController@UpdateEvents'); //edit events
     Route::get('DeleteEvents','EventsAdminController@DeleteEvents'); //delete events
+    
+    /*Admin Participant Routes*/
+    Route::get('participantEdit','ParticipantsAdminController@EditParticipants'); //delete participants
+    Route::patch('UpdateParticipants','ParticipantsAdminController@UpdateParticipants'); //edit events
+    Route::get('DeleteParticipants','ParticipantsAdminController@DeleteParticipants'); //delete participants
+    
+    /*Admin Issues Route*/
+    Route::get('DeleteIssues', 'IssuesAdminController@DeleteIssues');
 
 });
 //Admin Routes End------------------------------------------------------------------------------------------------|
