@@ -72,7 +72,7 @@ class EventsController extends Controller
         $myParticipationOnly = ParticipateModel::where('participantName',Auth::user()->uName)->get();
 
         $duplicateRecords = ParticipateModel::where('participantName',Auth::user()->uName)
-            ->selectRaw('count(`eventName`) as `occurences`')
+            ->selectRaw('count("eventName") as "occurences"')
             ->from('participants')
             ->groupBy('eventName')
             ->having('occurences', '>', 1)
