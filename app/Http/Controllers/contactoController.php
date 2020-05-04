@@ -38,13 +38,13 @@ class contactoController extends Controller
 
         $contacto->save();
         $data = [];
-        Mail::send('email.user.contaco',$data,function($message){
+   /*     Mail::send('email.issues',$data,function($message){
               $message->from('nik98hil@gmail.com');
               $message->to('nikhilsujith@outlook.com');
 
-        });
+        });*/
 
-        return redirect('user.contacto')->with('success','Request Registered');
+        return redirect('contacto')->with('success','Request Registered');
     }
 
     public function AddFooterEmail(Request $request){
@@ -59,6 +59,7 @@ class contactoController extends Controller
         $contacto->save();
 
         Mail::to($contacto->cEmail)->send(new IssuesMail());
+
         return redirect('/inicio')->with('success','Thank you for reaching out to us!  A member of our team will get back to you shortly on the email you provided below!');
     }
 
